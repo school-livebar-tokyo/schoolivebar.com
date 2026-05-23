@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・展示会などに対応した六本木の多目的ライブスペースです。音楽を軸に、さまざまなカルチャーが交差する場所として営業しています。">
+<meta property="og:title" content="六本木SCHOOL LIVE BAR TOKYO">
+<meta property="og:description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・展示会などに対応した六本木の多目的ライブスペースです。">
+<meta property="og:url" content="https://schoolivebar.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>六本木SCHOOL LIVE BAR TOKYO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f4f0;
+    --gray: #888;
+    --border: rgba(255,255,255,0.1);
+    --border-light: rgba(0,0,0,0.1);
+    --accent: #c8b89a;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--white);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: rgba(245,244,240,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lang-btn {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-body);
+  }
+
+  .lang-btn.active { background: var(--white); color: var(--black); }
+  .lang-btn.inactive { background: transparent; color: rgba(245,244,240,0.4); border: 0.5px solid rgba(255,255,255,0.2); }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  /* ─── MOBILE NAV ─── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 99;
+    background: var(--black);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .mobile-menu a:hover { opacity: 1; }
+
+  .mobile-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.7) 60%, var(--black) 100%);
+    z-index: 1;
+  }
+
+  .hero-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 12vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .hero-title span {
+    display: block;
+    color: rgba(245,244,240,0.35);
+    font-size: 0.42em;
+    letter-spacing: 0.14em;
+    margin-bottom: 4px;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    color: rgba(245,244,240,0.45);
+    line-height: 1.8;
+    max-width: 420px;
+    margin-bottom: 32px;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 0.5px solid rgba(255,255,255,0.18);
+    color: rgba(245,244,240,0.5);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 13px 28px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--white);
+    color: var(--black);
+    border: none;
+  }
+
+  .btn-primary:hover { background: var(--accent); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 0.5px solid rgba(255,255,255,0.3);
+  }
+
+  .btn-secondary:hover { border-color: var(--white); }
+
+  /* ─── TODAY ─── */
+  .today-section {
+    background: #111;
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    padding: 24px;
+  }
+
+  .today-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .today-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  .today-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .today-flyer {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    background: #1a1a1a;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid var(--border);
+  }
+
+  .today-flyer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .today-flyer-placeholder {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.15);
+  }
+
+  .today-info { flex: 1; }
+
+  .today-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .today-artists {
+    font-size: 12px;
+    color: rgba(245,244,240,0.45);
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+
+  .today-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .today-meta-item {
+    font-size: 11px;
+    color: rgba(245,244,240,0.4);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .today-ticket-btn {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 11px;
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    border-radius: 3px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .today-ticket-btn:hover { background: var(--accent); }
+
+  .today-rest {
+    font-size: 11px;
+    color: rgba(245,244,240,0.25);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    padding: 56px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    padding: 56px 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .section-more {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(245,244,240,0.4);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+
+  .section-more:hover { color: var(--white); }
+
+  /* ─── SCHEDULE ─── */
+  .schedule-list { display: flex; flex-direction: column; }
+
+  .event-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .event-row:first-child { border-top: 0.5px solid var(--border); }
+  .event-row:hover { opacity: 0.7; }
+
+  .event-date {
+    min-width: 52px;
+    text-align: left;
+    flex-shrink: 0;
+  }
+
+  .event-date-num {
+    font-family: var(--font-display);
+    font-size: 28px;
+    line-height: 1;
+    color: var(--white);
+  }
+
+  .event-date-sub {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(245,244,240,0.3);
+    margin-top: 2px;
+  }
+
+  .event-date-sub.sat { color: #7aabdc; }
+  .event-date-sub.sun { color: #dc7a7a; }
+
+  .event-divider {
+    width: 0.5px;
+    background: var(--border);
+    align-self: stretch;
+    flex-shrink: 0;
+  }
+
+  .event-body { flex: 1; padding-top: 3px; }
+
+  .event-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+
+  .event-cast {
+    font-size: 12px;
+    color: rgba(245,244,240,0.4);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .event-foot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .event-time, .event-price {
+    font-size: 11px;
+    color: rgba(245,244,240,0.3);
+  }
+
+  .event-type {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+
+  .type-live { border: 0.5px solid rgba(122,171,220,0.4); color: #7aabdc; }
+  .type-dj { border: 0.5px solid rgba(180,150,220,0.4); color: #b496dc; }
+  .type-private { border: 0.5px solid var(--border); color: rgba(245,244,240,0.3); }
+  .type-event { border: 0.5px solid rgba(200,184,154,0.4); color: var(--accent); }
+
+  .notion-sync {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: rgba(245,244,240,0.2);
+    margin-top: 20px;
+    padding: 10px 14px;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+  }
+
+  .notion-sync-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4CAF50;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ─── VENUE ─── */
+  .venue-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .venue-card {
+    padding: 20px;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+  }
+
+  .venue-card-icon {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .venue-card-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(245,244,240,0.3);
+    margin-bottom: 6px;
+  }
+
+  .venue-card-value {
+    font-size: 13px;
+    color: var(--white);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ─── USE OF SPACE ─── */
+  .use-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .use-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 0.5px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+
+  .use-item:first-child { border-top: 0.5px solid var(--border); }
+  .use-item:hover { opacity: 0.65; }
+
+  .use-num {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: rgba(245,244,240,0.15);
+    min-width: 32px;
+  }
+
+  .use-body { flex: 1; }
+
+  .use-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .use-desc {
+    font-size: 12px;
+    color: rgba(245,244,240,0.4);
+  }
+
+  .use-arrow {
+    font-size: 18px;
+    color: rgba(245,244,240,0.2);
+  }
+
+  /* ─── ACCESS ─── */
+  .access-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .access-rows { display: flex; flex-direction: column; }
+
+  .access-row {
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 0.5px solid var(--border);
+    align-items: flex-start;
+  }
+
+  .access-row:first-child { border-top: 0.5px solid var(--border); }
+
+  .access-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(245,244,240,0.3);
+    min-width: 48px;
+    padding-top: 2px;
+  }
+
+  .access-value {
+    font-size: 13px;
+    color: var(--white);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .access-map {
+    border-radius: 3px;
+    overflow: hidden;
+    border: 0.5px solid var(--border);
+    height: 240px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .access-map a {
+    font-size: 12px;
+    color: rgba(245,244,240,0.4);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+  }
+
+  .map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+    background: transparent;
+    color: rgba(245,244,240,0.5);
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .map-btn:hover { border-color: rgba(255,255,255,0.4); color: var(--white); }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: #0d0d0d;
+    border-top: 0.5px solid var(--border);
+    padding: 56px 24px;
+  }
+
+  .contact-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+
+  .contact-item:first-child { border-top: 0.5px solid var(--border); }
+  .contact-item:hover { opacity: 0.65; }
+
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(245,244,240,0.3);
+    min-width: 80px;
+  }
+
+  .contact-value {
+    font-size: 14px;
+    color: var(--white);
+    flex: 1;
+  }
+
+  .contact-arrow { color: rgba(245,244,240,0.2); font-size: 16px; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    border-top: 0.5px solid var(--border);
+    padding: 32px 24px 48px;
+  }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .footer-logo small {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(245,244,240,0.3);
+    margin-top: 4px;
+    font-weight: 300;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-social a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(245,244,240,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-social a:hover { color: var(--white); }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .footer-nav a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(245,244,240,0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover { color: var(--white); }
+
+  .footer-copy {
+    font-size: 10px;
+    color: rgba(245,244,240,0.15);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 0.5px;
+    background: var(--border);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ─── LOADING ─── */
+  #loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    transition: opacity 0.6s ease;
+  }
+
+  #loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loading-logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    animation: fadeIn 0.5s ease;
+  }
+
+  .loading-bar-wrap {
+    width: 120px;
+    height: 1px;
+    background: var(--border);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .loading-bar {
+    height: 100%;
+    background: var(--accent);
+    animation: loadProgress 1.2s ease forwards;
+  }
+
+  @keyframes loadProgress {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── FADE IN ─── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .hero { padding: 80px 20px 40px; }
+    .hero-desc { max-width: 100%; }
+
+    .section { padding: 40px 20px; }
+    .section-full { padding: 40px 20px; }
+
+    .venue-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .venue-card { padding: 14px; }
+
+    .access-wrap { grid-template-columns: 1fr; gap: 24px; }
+
+    .today-section { padding: 20px; }
+
+    .footer-top { flex-direction: column; gap: 16px; }
+  }
+
+  @media (max-width: 480px) {
+    .venue-grid { grid-template-columns: 1fr 1fr; }
+    .hero-cta { flex-direction: column; }
+    .hero-cta .btn { text-align: center; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading-screen">
+  <div class="loading-logo">六本木SCHOOL</div>
+  <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()" aria-label="閉じる">&times;</button>
+  <a href="#schedule" onclick="closeMobileMenu()">SCHEDULE</a>
+  <a href="#venue" onclick="closeMobileMenu()">VENUE</a>
+  <a href="#use" onclick="closeMobileMenu()">USE</a>
+  <a href="#access" onclick="closeMobileMenu()">ACCESS</a>
+  <a href="#contact" onclick="closeMobileMenu()">CONTACT</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">六本木SCHOOL</a>
+  <ul class="nav-links">
+    <li><a href="#schedule">SCHEDULE</a></li>
+    <li><a href="#venue">VENUE</a></li>
+    <li><a href="#use">USE</a></li>
+    <li><a href="#access">ACCESS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn active" id="btnJa" onclick="setLang('ja')">JP</button>
+    <button class="lang-btn inactive" id="btnEn" onclick="setLang('en')">EN</button>
+    <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-content fade-in">
+    <div class="hero-eyebrow">ROPPONGI · TOKYO · B1</div>
+    <h1 class="hero-title">
+      <span>LIVE BAR TOKYO</span>
+      六本木<br>SCHOOL
+    </h1>
+    <p class="hero-desc" data-ja="音楽を軸に、さまざまなカルチャーが交差する六本木のライブスペース。" data-en="A multi-purpose live space in Roppongi where music and culture intersect.">
+      音楽を軸に、さまざまなカルチャーが交差する六本木のライブスペース。
+    </p>
+    <div class="hero-tags">
+      <span class="tag">ACOUSTIC</span>
+      <span class="tag">DJ</span>
+      <span class="tag">TALK / EVENT</span>
+      <span class="tag">STREAMING</span>
+      <span class="tag">MAX 250</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#schedule" class="btn btn-primary" data-ja="チケット・予約 →" data-en="Tickets & Booking →">チケット・予約 →</a>
+      <a href="#use" class="btn btn-secondary" data-ja="ホールレンタル" data-en="Hall Rental">ホールレンタル</a>
+    </div>
+  </div>
+</section>
+
+<!-- TODAY'S SCHOOL -->
+<div class="today-section" id="today">
+  <div class="today-label" id="todayLabel">TODAY'S SCHOOL — <span id="todayDate"></span></div>
+  <div id="todayContent">
+    <!-- JSで動的に入る -->
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2 class="section-title">SCHEDULE</h2>
+      <a href="#" class="section-more" data-ja="すべて見る →" data-en="View all →">すべて見る →</a>
+    </div>
+    <div class="schedule-list" id="scheduleList">
+      <!-- JSで動的に入る -->
+    </div>
+    <div class="notion-sync">
+      <div class="notion-sync-dot"></div>
+      <span data-ja="Notionと連携 · 毎朝8時に自動更新" data-en="Auto-synced with Notion · Updated daily at 8am">Notionと連携 · 毎朝8時に自動更新</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VENUE -->
+<section id="venue">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2 class="section-title">VENUE</h2>
+    </div>
+    <div class="venue-grid">
+      <div class="venue-card">
+        <div class="venue-card-icon">CAP.</div>
+        <div class="venue-card-label" data-ja="キャパシティ" data-en="Capacity">キャパシティ</div>
+        <div class="venue-card-value" data-ja="スタンディング 250名<br>着席 100名" data-en="Standing 250<br>Seated 100">スタンディング 250名<br>着席 100名</div>
+      </div>
+      <div class="venue-card">
+        <div class="venue-card-icon">USE.</div>
+        <div class="venue-card-label" data-ja="対応イベント" data-en="Event Types">対応イベント</div>
+        <div class="venue-card-value" data-ja="ライブ / DJ / トーク<br>配信 / 展示" data-en="Live / DJ / Talk<br>Streaming / Exhibition">ライブ / DJ / トーク<br>配信 / 展示</div>
+      </div>
+      <div class="venue-card">
+        <div class="venue-card-icon">EQ.</div>
+        <div class="venue-card-label" data-ja="設備" data-en="Equipment">設備</div>
+        <div class="venue-card-value" data-ja="電子ピアノ / PA設備<br>照明 / 配信機材" data-en="Electronic piano / PA<br>Lighting / Streaming">電子ピアノ / PA設備<br>照明 / 配信機材</div>
+      </div>
+      <div class="venue-card">
+        <div class="venue-card-icon">N/A.</div>
+        <div class="venue-card-label" data-ja="不可" data-en="Not Available">不可</div>
+        <div class="venue-card-value" data-ja="大音量バンドライブ<br>生ピアノ" data-en="Loud band live<br>Grand piano">大音量バンドライブ<br>生ピアノ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- USE OF SPACE -->
+<section id="use">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2 class="section-title">USE OF SPACE</h2>
+      <a href="mailto:info@schoolivebar.com" class="section-more" data-ja="問い合わせ →" data-en="Contact →">問い合わせ →</a>
+    </div>
+    <div class="use-list">
+      <a href="mailto:miya@schoolivebar.com" class="use-item">
+        <div class="use-num">01</div>
+        <div class="use-body">
+          <div class="use-name" data-ja="ライブ・アコースティック" data-en="Live / Acoustic">ライブ・アコースティック</div>
+          <div class="use-desc" data-ja="弾き語り・電子ピアノ・PA完備。アコースティックからバンドまで対応。" data-en="Solo performance, electronic piano, full PA. Acoustic to band.">弾き語り・電子ピアノ・PA完備。アコースティックからバンドまで対応。</div>
+        </div>
+        <div class="use-arrow">→</div>
+      </a>
+      <a href="mailto:miya@schoolivebar.com" class="use-item">
+        <div class="use-num">02</div>
+        <div class="use-body">
+          <div class="use-name" data-ja="DJ・配信イベント" data-en="DJ / Streaming">DJ・配信イベント</div>
+          <div class="use-desc" data-ja="DJ機材・配信設備完備。ライブ配信・収録にも対応。" data-en="DJ equipment and streaming setup. Live streaming and recording available.">DJ機材・配信設備完備。ライブ配信・収録にも対応。</div>
+        </div>
+        <div class="use-arrow">→</div>
+      </a>
+      <a href="mailto:info@schoolivebar.com" class="use-item">
+        <div class="use-num">03</div>
+        <div class="use-body">
+          <div class="use-name" data-ja="ホールレンタル" data-en="Hall Rental">ホールレンタル</div>
+          <div class="use-desc" data-ja="完全貸切。企業イベント・プライベートパーティー・撮影に。" data-en="Full venue rental. Corporate events, private parties, photo/video shoots.">完全貸切。企業イベント・プライベートパーティー・撮影に。</div>
+        </div>
+        <div class="use-arrow">→</div>
+      </a>
+      <a href="mailto:info@schoolivebar.com" class="use-item">
+        <div class="use-num">04</div>
+        <div class="use-body">
+          <div class="use-name" data-ja="トーク・展示" data-en="Talk / Exhibition">トーク・展示</div>
+          <div class="use-desc" data-ja="着席100名対応。トークショー・展示会・ワークショップに。" data-en="Seats up to 100. Talk shows, exhibitions, workshops.">着席100名対応。トークショー・展示会・ワークショップに。</div>
+        </div>
+        <div class="use-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ACCESS -->
+<section id="access">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2 class="section-title">ACCESS</h2>
+    </div>
+    <div class="access-wrap">
+      <div class="access-rows">
+        <div class="access-row">
+          <div class="access-label" data-ja="住所" data-en="Address">住所</div>
+          <div class="access-value" data-ja="港区六本木5-16-5<br>インペリアル六本木 B1" data-en="5-16-5 Roppongi, Minato-ku<br>Imperial Roppongi B1">港区六本木5-16-5<br>インペリアル六本木 B1</div>
+        </div>
+        <div class="access-row">
+          <div class="access-label" data-ja="電車" data-en="Train">電車</div>
+          <div class="access-value" data-ja="東京メトロ日比谷線「六本木」駅 徒歩3分<br>都営大江戸線「六本木」駅 徒歩5分" data-en="Tokyo Metro Hibiya Line 'Roppongi' Sta. 3 min.<br>Toei Oedo Line 'Roppongi' Sta. 5 min.">東京メトロ日比谷線「六本木」駅 徒歩3分<br>都営大江戸線「六本木」駅 徒歩5分</div>
+        </div>
+        <div class="access-row">
+          <div class="access-label">TEL</div>
+          <div class="access-value"><a href="tel:0355455758" style="color:inherit;text-decoration:none;">03-5545-5758</a></div>
+        </div>
+        <div class="access-row">
+          <div class="access-label">WEB</div>
+          <div class="access-value">schoolivebar.com</div>
+        </div>
+        <a href="https://maps.google.com/?q=港区六本木5-16-5+インペリアル六本木" target="_blank" class="map-btn" data-ja="Google マップで開く" data-en="Open in Google Maps">Google マップで開く</a>
+      </div>
+      <div>
+        <div class="access-map">
+          <a href="https://maps.google.com/?q=港区六本木5-16-5+インペリアル六本木" target="_blank" data-ja="地図を開く" data-en="Open map">地図を開く</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-header" style="max-width:900px;margin:0 auto 24px;">
+    <h2 class="section-title">CONTACT</h2>
+  </div>
+  <div class="contact-grid fade-in">
+    <a href="mailto:info@schoolivebar.com" class="contact-item">
+      <div class="contact-label" data-ja="一般・レンタル" data-en="General / Rental">一般・レンタル</div>
+      <div class="contact-value">info@schoolivebar.com</div>
+      <div class="contact-arrow">→</div>
+    </a>
+    <a href="mailto:miya@schoolivebar.com" class="contact-item">
+      <div class="contact-label" data-ja="ブッキング" data-en="Booking">ブッキング</div>
+      <div class="contact-value">miya@schoolivebar.com</div>
+      <div class="contact-arrow">→</div>
+    </a>
+    <a href="https://page.line.me/067inrki" target="_blank" class="contact-item">
+      <div class="contact-label">LINE</div>
+      <div class="contact-value" data-ja="LINE公式アカウント" data-en="LINE Official Account">LINE公式アカウント</div>
+      <div class="contact-arrow">→</div>
+    </a>
+    <a href="https://forms.gle/46AVYJHFmXbBXKqi8" target="_blank" class="contact-item">
+      <div class="contact-label" data-ja="スタッフ応募" data-en="Staff Application">スタッフ応募</div>
+      <div class="contact-value" data-ja="アルバイトスタッフ募集中" data-en="Part-time staff wanted">アルバイトスタッフ募集中</div>
+      <div class="contact-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">
+        六本木SCHOOL
+        <small>LIVE BAR TOKYO · ROPPONGI B1</small>
+      </div>
+      <div class="footer-social">
+        <a href="https://x.com/schoolivebar" target="_blank">X (Twitter)</a>
+        <a href="https://www.instagram.com/schoolivebar" target="_blank">Instagram</a>
+        <a href="https://page.line.me/067inrki" target="_blank">LINE</a>
+      </div>
+    </div>
+    <ul class="footer-nav">
+      <li><a href="#schedule" data-ja="スケジュール" data-en="Schedule">スケジュール</a></li>
+      <li><a href="#venue" data-ja="施設情報" data-en="Venue Info">施設情報</a></li>
+      <li><a href="#use" data-ja="ホールレンタル" data-en="Hall Rental">ホールレンタル</a></li>
+      <li><a href="#access" data-ja="アクセス" data-en="Access">アクセス</a></li>
+      <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
+      <li><a href="https://forms.gle/46AVYJHFmXbBXKqi8" target="_blank" data-ja="スタッフ募集" data-en="Jobs">スタッフ募集</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 六本木SCHOOL LIVE BAR TOKYO. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// ─── LOADING ───
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var ls = document.getElementById('loading-screen');
+    if (ls) ls.classList.add('hidden');
+    setTimeout(function() { if (ls) ls.style.display = 'none'; }, 600);
+  }, 1400);
+});
+
+// ─── FADE IN (Intersection Observer) ───
+var fades = document.querySelectorAll('.fade-in');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+fades.forEach(function(el) { observer.observe(el); });
+
+// ─── MOBILE MENU ───
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─── LANGUAGE ───
+var currentLang = 'ja';
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('btnJa').className = 'lang-btn ' + (lang === 'ja' ? 'active' : 'inactive');
+  document.getElementById('btnEn').className = 'lang-btn ' + (lang === 'en' ? 'active' : 'inactive');
+  document.querySelectorAll('[data-ja]').forEach(function(el) {
+    var text = el.getAttribute('data-' + lang);
+    if (text) el.innerHTML = text;
+  });
+}
+
+// ─── TODAY'S DATE ───
+var days = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+var now = new Date();
+var dateStr = now.getFullYear() + '.' + String(now.getMonth()+1).padStart(2,'0') + '.' + String(now.getDate()).padStart(2,'0') + ' ' + days[now.getDay()];
+document.getElementById('todayDate').textContent = dateStr;
+
+// ─── SCHEDULE DATA (GASが生成するevents.jsonを読み込む) ───
+var EVENTS_URL = 'events.json';
+
+function typeClass(type) {
+  if (type === 'LIVE') return 'type-live';
+  if (type === 'DJ') return 'type-dj';
+  if (type === 'PRIVATE') return 'type-private';
+  return 'type-event';
+}
+
+function dowClass(dow) {
+  if (dow === 'SAT') return 'sat';
+  if (dow === 'SUN') return 'sun';
+  return '';
+}
+
+function renderToday(events) {
+  var todayStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+  var todayEvents = events.filter(function(e) { return e.date === todayStr; });
+  var container = document.getElementById('todayContent');
+  if (todayEvents.length === 0) {
+    container.innerHTML = '<p style="font-size:13px;color:rgba(245,244,240,0.3);padding:8px 0;">本日のイベントはありません。</p>';
+    return;
+  }
+  var ev = todayEvents[0];
+  container.innerHTML =
+    '<div class="today-card">' +
+      '<div class="today-flyer"><div class="today-flyer-placeholder">FLYER</div></div>' +
+      '<div class="today-info">' +
+        '<div class="today-title">' + ev.title + '</div>' +
+        '<div class="today-artists">' + (ev.artists || '') + '</div>' +
+        '<div class="today-meta">' +
+          (ev.time ? '<div class="today-meta-item">OPEN ' + ev.time + '</div>' : '') +
+          (ev.price ? '<div class="today-meta-item">ADV ' + ev.price + '</div>' : '') +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    (ev.ticketUrl ? '<a href="' + ev.ticketUrl + '" target="_blank" class="today-ticket-btn">チケットを購入する →</a>' : '') +
+    (todayEvents.length > 1 ? '<div class="today-rest">他 ' + (todayEvents.length - 1) + ' イベントあり</div>' : '');
+}
+
+function renderSchedule(events) {
+  var list = document.getElementById('scheduleList');
+  var future = events.filter(function(e) {
+    return e.date >= now.toISOString().slice(0,10);
+  }).slice(0, 8);
+
+  if (future.length === 0) {
+    list.innerHTML = '<p style="font-size:13px;color:rgba(245,244,240,0.3);padding:20px 0;">スケジュールを準備中です。</p>';
+    return;
+  }
+
+  list.innerHTML = future.map(function(ev) {
+    var d = new Date(ev.date);
+    var dayNum = String(d.getDate()).padStart(2, '0');
+    var monthStr = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'][d.getMonth()];
+    var dowStr = days[d.getDay()];
+    var dc = dowClass(dowStr);
+    return '<a href="' + (ev.url || '#') + '" class="event-row">' +
+      '<div class="event-date">' +
+        '<div class="event-date-num">' + dayNum + '</div>' +
+        '<div class="event-date-sub ' + dc + '">' + dowStr + ' ' + monthStr + '</div>' +
+      '</div>' +
+      '<div class="event-divider"></div>' +
+      '<div class="event-body">' +
+        '<div class="event-title">' + ev.title + '</div>' +
+        (ev.artists ? '<div class="event-cast">' + ev.artists + '</div>' : '') +
+        '<div class="event-foot">' +
+          (ev.time ? '<span class="event-time">' + ev.time + '</span>' : '') +
+          (ev.price ? '<span class="event-price">' + ev.price + '</span>' : '') +
+          '<span class="event-type ' + typeClass(ev.type) + '">' + (ev.type || 'LIVE') + '</span>' +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }).join('');
+}
+
+// events.json を取得（なければサンプル表示）
+fetch(EVENTS_URL)
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    renderToday(data);
+    renderSchedule(data);
+  })
+  .catch(function() {
+    // フォールバック：サンプルデータ
+    var sample = [
+      { date: now.toISOString().slice(0,10), title: '本日のイベント', artists: 'アーティスト名', time: '18:00', price: '¥2,500', type: 'LIVE', url: '#' },
+      { date: '2026-06-06', title: '光化学の世界 vol.2', artists: 'コダマカプセル / FROITO / La muzzle / どっちつかズ', time: '17:00 / 17:30', price: 'ADV ¥2,800', type: 'LIVE', url: '#' },
+      { date: '2026-06-14', title: 'Saturday Night Session', artists: 'DJ TARO / yuki.sounds', time: '21:00 / 21:30', price: 'DOOR ¥2,000', type: 'DJ', url: '#' },
+      { date: '2026-06-21', title: 'Private Party', artists: '非公開', time: '', price: '', type: 'PRIVATE', url: '#' }
+    ];
+    renderToday(sample);
+    renderSchedule(sample);
+  });
+</script>
+</body>
+</html>
