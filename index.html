@@ -1231,8 +1231,8 @@ var dateStr = now.getFullYear() + '.' + String(now.getMonth()+1).padStart(2,'0')
 document.getElementById('todayDate').textContent = dateStr;
 
 // ─── SCHEDULE DATA (GASが生成するevents.jsonを読み込む) ───
-var EVENTS_URL = 'events.json';
-
+var EVENTS_URL = 'https://raw.githubusercontent.com/school-livebar-tokyo/schoolivebar.com/main/events.json';
+  
 function typeClass(type) {
   if (type === 'LIVE') return 'type-live';
   if (type === 'DJ') return 'type-dj';
