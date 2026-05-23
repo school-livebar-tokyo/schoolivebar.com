@@ -1,16 +1,79 @@
 [
   {
-    "date": "2024-10-04",
-    "title": "X國 Vol.5",
+    "date": "2026-05-23",
+    "title": "salon da ska",
+    "artists": "Bacchanales  /  Beat Bahnhof  /  BREATHE LITES  /  BRAVE LION",
+    "time": "17:30 / 18:00",
+    "price": "ADV ¥3,000- / DOOR ¥3,000-",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-05-24",
+    "title": "no beer no life",
     "artists": "",
-    "time": "12:00 / 12:30",
+    "time": "",
+    "price": "",
+    "type": "EVENT",
+    "url": "#"
+  },
+  {
+    "date": "2026-05-29",
+    "title": "DJイベント(not lounge)",
+    "artists": "DJ:judgeman yuto kanai / Kazuki sasaki /Terax  LIVE:(誘) Kingo /QPRO / Wang Dang Doodle",
+    "time": "",
     "price": "",
     "type": "LIVE",
     "url": "#"
   },
   {
-    "date": "2024-10-05",
-    "title": "六本木SCHOOL OPEN CAMPUS - JAM NIGHT 体験入学",
+    "date": "2026-05-30",
+    "title": "空気公団",
+    "artists": "空気公団solo  /  guest　笹原 清明（Spangle call Lilli line）",
+    "time": "17:00 / 17:30",
+    "price": "ADV ¥4,000- / DOOR ¥4,500-",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-05-31",
+    "title": "no beer no life",
+    "artists": "",
+    "time": "",
+    "price": "",
+    "type": "EVENT",
+    "url": "#"
+  },
+  {
+    "date": "2026-06-02",
+    "title": "うしじまいい肉さんチェキ会 (3)",
+    "artists": "",
+    "time": "",
+    "price": "",
+    "type": "EVENT",
+    "url": "#"
+  },
+  {
+    "date": "2026-06-04",
+    "title": "Roppongi Soundscape ",
+    "artists": "hollow me / 柿の花 / メモリ / コダマカプセル / くじら座 / 晩年 /",
+    "time": "",
+    "price": "",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-06-06",
+    "title": "kodama capsel",
+    "artists": "どっちつかズ  /  La muzzle  /  FROITO  /  コダマカプセル",
+    "time": "17:00 / 17:30",
+    "price": "ADV ¥2,800 / DOOR ¥3,300 / ¥U-22 ¥2,000",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-06-07",
+    "title": "栗原",
     "artists": "",
     "time": "",
     "price": "",
@@ -18,8 +81,17 @@
     "url": "#"
   },
   {
-    "date": "2024-10-06",
-    "title": "六本木SCHOOL OPEN CAMPUS - JAM NIGHT 体験入学",
+    "date": "2026-06-10",
+    "title": "BOOKING",
+    "artists": "ヤジマX / ハシグチカナデリヤ / さかいかの（OK）/ BAMBOO CHIL（？） /",
+    "time": "",
+    "price": "",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-06-12",
+    "title": "留学生ブッキング(仮)",
     "artists": "",
     "time": "",
     "price": "",
@@ -27,8 +99,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-09",
-    "title": "蛙池 深夜飲み会",
+    "date": "2026-06-13",
+    "title": "no beer no life (1)",
     "artists": "",
     "time": "",
     "price": "",
@@ -36,8 +108,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-11",
-    "title": "X國 Vol.6　",
+    "date": "2026-06-14",
+    "title": "村上",
     "artists": "",
     "time": "",
     "price": "",
@@ -45,8 +117,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-12",
-    "title": "DJイベント　ロシア系 (鶴)",
+    "date": "2026-06-15",
+    "title": "岩城さん",
     "artists": "",
     "time": "",
     "price": "",
@@ -54,8 +126,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-14",
-    "title": "内覧会",
+    "date": "2026-06-16",
+    "title": "うしじまいい肉さんチェキ会 (3)",
     "artists": "",
     "time": "",
     "price": "",
@@ -63,8 +135,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-16",
-    "title": "過失　中国バンド（許）　",
+    "date": "2026-06-19",
+    "title": "kurihara",
     "artists": "",
     "time": "",
     "price": "",
@@ -72,8 +144,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-18",
-    "title": "課外活動",
+    "date": "2026-06-20",
+    "title": "河島さん",
     "artists": "",
     "time": "",
     "price": "",
@@ -81,8 +153,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-19",
-    "title": "ラッパーイベント　ヒョンテ　(鶴)",
+    "date": "2026-06-21",
+    "title": "115 イベント",
     "artists": "",
     "time": "",
     "price": "",
@@ -90,17 +162,17 @@
     "url": "#"
   },
   {
-    "date": "2024-10-22",
-    "title": "つしまみれ 凱旋ライブ",
-    "artists": "Live & Talk with Zarigani$, Bo-Peep, Mari (TsuShiMaMiRe)",
-    "time": "19:30 / 18:00",
-    "price": "¥2000",
+    "date": "2026-06-25",
+    "title": "Roppongi Soundscape ",
+    "artists": "志摩陽立 /水泳/ cambelle / ぼんち / Teiichi /yoog / Wappen /",
+    "time": "",
+    "price": "",
     "type": "LIVE",
     "url": "#"
   },
   {
-    "date": "2024-10-25",
-    "title": "Chou 2バンド（許）",
+    "date": "2026-06-26",
+    "title": "留学生ブッキング仮",
     "artists": "",
     "time": "",
     "price": "",
@@ -108,17 +180,8 @@
     "url": "#"
   },
   {
-    "date": "2024-10-26",
-    "title": " (SCHOOL)",
-    "artists": "Utopia 、first meet、再新製",
-    "time": "18:00 / 19:00",
-    "price": "1500",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-10-31",
-    "title": "藤本さんハロウィンDJイベント(鶴)",
+    "date": "2026-06-27",
+    "title": "FL1X 昼＆夜 (2)",
     "artists": "",
     "time": "",
     "price": "",
@@ -126,35 +189,8 @@
     "url": "#"
   },
   {
-    "date": "2024-11-01",
-    "title": "課外活動 Vol. 9",
-    "artists": "Angulabel、壹陆发、奇迹闪电鹤",
-    "time": "18:00/19:00",
-    "price": "",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-02",
-    "title": "課外活動 Vol. 10",
-    "artists": "周小渝、汶枫、0.519",
-    "time": "18:00 / 19:00",
-    "price": "1500",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-03",
-    "title": "学生大乱闘",
-    "artists": "",
-    "time": "18:00 19:00",
-    "price": "1D or 19:00~22:00 飲み放題(一般4000、SCHOOL STAFF2000)",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-05",
-    "title": "八月ちゃんバー",
+    "date": "2026-06-28",
+    "title": "FL1X 昼＆夜 (3)",
     "artists": "",
     "time": "",
     "price": "",
@@ -162,8 +198,17 @@
     "url": "#"
   },
   {
-    "date": "2024-11-06",
-    "title": "八月ちゃん",
+    "date": "2026-07-03",
+    "title": "留学生ライブブッキング",
+    "artists": "",
+    "time": "18:30/19:00",
+    "price": "当2800 学2000",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-07-04",
+    "title": "学校夜光　idle edition",
     "artists": "",
     "time": "",
     "price": "",
@@ -171,26 +216,8 @@
     "url": "#"
   },
   {
-    "date": "2024-11-10",
-    "title": "六本木暴動 ",
-    "artists": "暴動天国\nJET BOYS\nCREAM PANDA\nHAZARD\nSAUSY JACKY (from CHINA)",
-    "time": "16:00/17:00",
-    "price": "無料（DRINK代のみで入場可能）",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-11",
-    "title": "くぴぽ",
-    "artists": "・くぴぽ\n・ゆるめるモ！\n・SAKA-SAMA\n・個性美術館(O.A)",
-    "time": "18:30 / 18:45",
-    "price": "2500 / 3000",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-12",
-    "title": "撮影会",
+    "date": "2026-07-04",
+    "title": "早稲田仮",
     "artists": "",
     "time": "",
     "price": "",
@@ -198,8 +225,17 @@
     "url": "#"
   },
   {
-    "date": "2024-11-13",
-    "title": "カラオケ",
+    "date": "2026-07-05",
+    "title": "海太くん仮",
+    "artists": "ヤジマX  /  ワニディール  /  小林拓真  /  honninman  /  杉浦真廣(f.ケバブジョンソン)  /  片岡フグリ  /  穂高亜希子  /",
+    "time": "",
+    "price": "",
+    "type": "LIVE",
+    "url": "#"
+  },
+  {
+    "date": "2026-07-07",
+    "title": "うしじまいい肉さんチェキ会 (3)",
     "artists": "",
     "time": "",
     "price": "",
@@ -207,35 +243,17 @@
     "url": "#"
   },
   {
-    "date": "2024-11-15",
-    "title": "くぴぽ",
-    "artists": "くぴぽ\n棘-おどろ-",
-    "time": "18:45/19:15",
-    "price": "前売り2500/当日3000",
+    "date": "2026-07-09",
+    "title": "Roppongi Soundscape ",
+    "artists": "(誘)yoog,(誘)cadooo,",
+    "time": "",
+    "price": "",
     "type": "LIVE",
     "url": "#"
   },
   {
-    "date": "2024-11-16",
-    "title": "大餅　コピーバンド (許)",
-    "artists": "",
-    "time": "18:00 / 19:00",
-    "price": "1D",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-17",
-    "title": "くぴぽ　昼夜2回公演",
-    "artists": "お昼　\n\nくぴぽ\n椿宝座\n\n夜\n\nくぴぽ\nMAPA",
-    "time": "お昼　OPEN13:00 / START13:30　夜　OPEN17:45 / START18:30",
-    "price": "昼　前売¥2,500 / 当日¥3,000　夜　前売¥3,000 / 当日¥3,500",
-    "type": "LIVE",
-    "url": "#"
-  },
-  {
-    "date": "2024-11-19",
-    "title": "撮影会",
+    "date": "2026-07-11",
+    "title": "うしじまいい肉さんチェキ会 (4)",
     "artists": "",
     "time": "",
     "price": "",
@@ -243,11 +261,11 @@
     "url": "#"
   },
   {
-    "date": "2024-11-20",
-    "title": "布衣 　中国バンド　（許）",
-    "artists": "布衣",
+    "date": "2026-07-12",
+    "title": "メロンちゃん",
+    "artists": "",
     "time": "",
-    "price": "前売り2000、当日2500",
+    "price": "",
     "type": "LIVE",
     "url": "#"
   }
