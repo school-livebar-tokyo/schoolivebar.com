@@ -2,11 +2,13 @@
   {
     "date": "2026-05-29",
     "title": "Friday Night Fever",
-    "artists": "DJ judgeman  /  yuto kanai  /  Kazuki sasaki  /  Terax",
+    "artists": "DJ Terax  /  Kazuki sasaki  /  judgeman  /  yuto kanai",
     "time": "19:00 / 19:00",
     "price": "DOOR ¥1500(inc.1d)",
     "type": "LIVE",
     "snsPosted": true,
+    "pickup": false,
+    "images": [],
     "url": "#"
   },
   {
@@ -17,16 +19,22 @@
     "price": "ADV ¥4,000- / DOOR ¥4,500-",
     "type": "LIVE",
     "snsPosted": true,
+    "pickup": false,
+    "images": [],
     "url": "#"
   },
   {
     "date": "2026-06-06",
     "title": "光化学の世界 vol.2",
-    "artists": "どっちつかズ  /  La muzzle  /  FROITO  /  コダマカプセル",
+    "artists": "コダマカプセル  /  FROITO  /  La muzzle  /  どっちつかズ",
     "time": "17:00 / 17:30",
     "price": "ADV ¥2,800 / DOOR ¥3,300 / ¥U-22 ¥2,000",
     "type": "LIVE",
     "snsPosted": true,
+    "pickup": false,
+    "images": [
+      "https://drive.google.com/thumbnail?id=1La1PkmjGqet-zDzbNNd084bsECGz51tJ&sz=w400"
+    ],
     "url": "#"
   },
   {
@@ -37,6 +45,10 @@
     "price": "Adv ¥5,000- / Door ¥5,500-",
     "type": "LIVE",
     "snsPosted": true,
+    "pickup": false,
+    "images": [
+      "https://drive.google.com/thumbnail?id=1QiZn_2KoJydjFXiGZJGEZRkvkzJv59go&sz=w400"
+    ],
     "url": "#"
   },
   {
@@ -47,6 +59,8 @@
     "price": "無料　入場時 2drink¥1,000-",
     "type": "LIVE",
     "snsPosted": true,
+    "pickup": false,
+    "images": [],
     "url": "#"
   }
 ]
