@@ -3,248 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・展示会などに対応した六本木の多目的ライブスペースです。">
 <title>六本木SCHOOL LIVE BAR TOKYO</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 <style>
-:root{--black:#0c0c0c;--white:#f0ede8;--border:rgba(240,237,232,0.08);--accent:#c8b89a;--sat:#6a9fd8;--sun:#c46a6a;--font-d:'Bebas Neue',sans-serif;--font-b:'Noto Sans JP',sans-serif}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-b);background:var(--black);color:var(--white);font-weight:300;-webkit-font-smoothing:antialiased}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(12,12,12,0.95);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--border)}
-.nav-logo{font-family:var(--font-d);font-size:18px;letter-spacing:0.1em;color:var(--white);text-decoration:none}
-.nav-right{display:flex;align-items:center;gap:12px}
-.lang{display:flex;gap:3px}
-.lang-btn{font-size:10px;padding:3px 8px;border-radius:2px;cursor:pointer;border:none;font-family:var(--font-b);letter-spacing:0.08em}
-.lang-on{background:var(--white);color:var(--black);font-weight:500}
-.lang-off{background:transparent;color:rgba(240,237,232,0.3);border:0.5px solid rgba(240,237,232,0.15)}
-.hamburger{display:flex;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{display:block;width:20px;height:0.5px;background:rgba(240,237,232,0.6)}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--black);flex-direction:column;align-items:center;justify-content:center;gap:28px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--font-d);font-size:40px;letter-spacing:0.1em;color:var(--white);text-decoration:none;opacity:0.7}
-.mobile-menu a:hover{opacity:1}
-.mobile-close{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer}
-.today-section{padding:72px 20px 20px;border-bottom:0.5px solid var(--border)}
-.section-hd{font-size:9px;letter-spacing:0.2em;color:rgba(240,237,232,0.25);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
-.hd-line{flex:1;height:0.5px;background:var(--border);margin-left:10px}
-.today-date-str{color:rgba(240,237,232,0.35);font-size:9px;letter-spacing:0.1em}
-.today-card{display:flex;gap:14px;align-items:flex-start;padding:14px;border:0.5px solid rgba(240,237,232,0.1);border-radius:2px;background:rgba(240,237,232,0.02)}
-.flyer{width:72px;height:72px;flex-shrink:0;background:#181818;border:0.5px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:8px;letter-spacing:0.06em;color:rgba(240,237,232,0.12);overflow:hidden}
-.flyer img{width:100%;height:100%;object-fit:cover}
-.today-info{flex:1}
-.today-title{font-size:15px;font-weight:500;color:var(--white);line-height:1.3;margin-bottom:5px}
-.today-cast{font-size:11px;color:rgba(240,237,232,0.38);line-height:1.6;margin-bottom:8px}
-.today-meta{display:flex;gap:12px;flex-wrap:wrap}
-.today-meta span{font-size:10px;color:rgba(240,237,232,0.28)}
-.ticket-btn{display:block;width:100%;margin-top:12px;padding:11px;text-align:center;text-decoration:none;background:var(--white);color:var(--black);border:none;border-radius:2px;font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:0.12em;cursor:pointer;transition:background 0.2s}
-.ticket-btn:hover{background:var(--accent)}
-.no-event{padding:24px 0;text-align:center;font-size:12px;color:rgba(240,237,232,0.18);letter-spacing:0.1em}
-.today-count{font-size:10px;color:rgba(240,237,232,0.2);text-align:center;margin-top:10px;letter-spacing:0.06em}
-.schedule-section{padding:24px 20px;border-bottom:0.5px solid var(--border)}
-.ev-list{display:flex;flex-direction:column}
-.ev-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:0.5px solid var(--border);cursor:pointer;text-decoration:none;color:inherit;transition:opacity 0.18s}
+/* index.html 固有スタイル */
+.sh-center{justify-content:center}
+.today{padding:0 var(--page-pad) var(--sec-gap)}
+.today-title{font-size:var(--text-11);color:var(--l2);font-weight:var(--fw-light);margin-bottom:var(--group-gap)}
+.today-artists{font-size:var(--text-17);font-weight:var(--fw-medium);line-height:var(--lh-list);margin-bottom:var(--group-gap)}
+.info-rows{border-top:0.5px solid var(--border);margin-bottom:var(--group-gap)}
+.info-row{display:flex;gap:var(--group-gap);padding:var(--item-gap) 0;border-bottom:0.5px solid var(--border);align-items:baseline}
+.info-label{font-size:var(--text-11);color:var(--l3);min-width:88px;font-weight:var(--fw-light);letter-spacing:0.04em;flex-shrink:0}
+.info-val{font-size:var(--text-11);color:var(--l1)}
+.more-link{display:inline-block;font-size:var(--text-11);color:var(--l2);letter-spacing:0.08em;border-bottom:0.5px solid var(--border-mid);padding-bottom:2px;margin-top:var(--group-gap)}
+
+.pickup{padding:0 var(--page-pad) var(--sec-gap);display:flex;flex-direction:column;gap:10px}
+.pickup-card{display:flex;border:0.5px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer}
+.pickup-thumb{width:110px;flex-shrink:0}
+.pickup-thumb img{width:100%;height:100%;object-fit:cover}
+.pickup-body{flex:1;padding:var(--group-gap);display:flex;flex-direction:column;gap:var(--item-gap)}
+.pickup-date{font-size:var(--text-13);font-weight:var(--fw-medium)}
+.pickup-artists{font-size:var(--text-13);font-weight:var(--fw-medium);line-height:var(--lh-list)}
+.pickup-sub{font-size:var(--text-11);color:var(--l2);font-weight:var(--fw-light)}
+.pickup-foot{display:flex;gap:6px;align-items:center;font-size:var(--text-11);color:var(--l3)}
+
+.ev-list{padding:0 var(--page-pad)}
+.ev-row{display:flex;border-bottom:0.5px solid var(--border);cursor:pointer}
 .ev-row:first-child{border-top:0.5px solid var(--border)}
-.ev-row:last-child{border-bottom:none}
-.ev-row:hover{opacity:0.55}
-.ev-date{min-width:40px;flex-shrink:0}
-.ev-num{font-family:var(--font-d);font-size:26px;color:var(--white);line-height:1}
-.ev-dow{font-size:9px;letter-spacing:0.08em;color:rgba(240,237,232,0.22);margin-top:2px}
-.ev-dow.sat{color:var(--sat)}
-.ev-dow.sun{color:var(--sun)}
-.ev-vline{width:0.5px;background:var(--border);align-self:stretch;flex-shrink:0}
-.ev-body{flex:1;padding-top:3px}
-.ev-title{font-size:13px;font-weight:500;color:var(--white);line-height:1.4;margin-bottom:4px}
-.ev-cast{font-size:11px;color:rgba(240,237,232,0.33);line-height:1.5;margin-bottom:6px}
-.ev-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.ev-time,.ev-price{font-size:10px;color:rgba(240,237,232,0.22)}
-.ev-tag{font-size:9px;padding:1px 7px;border-radius:1px;letter-spacing:0.08em}
-.tag-live{border:0.5px solid rgba(106,159,216,0.3);color:var(--sat)}
-.tag-dj{border:0.5px solid rgba(180,150,220,0.3);color:#b496dc}
-.tag-event{border:0.5px solid rgba(200,184,154,0.3);color:var(--accent)}
-.tag-private{border:0.5px solid var(--border);color:rgba(240,237,232,0.22)}
-.show-more{display:block;width:100%;margin-top:16px;padding:10px;text-align:center;border:0.5px solid var(--border);border-radius:2px;background:transparent;color:rgba(240,237,232,0.3);font-family:var(--font-b);font-size:11px;letter-spacing:0.1em;cursor:pointer;transition:all 0.2s}
-.show-more:hover{border-color:rgba(240,237,232,0.3);color:var(--white)}
-.sync-badge{display:flex;align-items:center;gap:6px;font-size:9px;color:rgba(240,237,232,0.14);letter-spacing:0.06em;margin-top:14px}
-.sync-dot{width:5px;height:5px;border-radius:50%;background:#4a9;flex-shrink:0;animation:pulse 2.5s infinite}
+.ev-thumb{width:72px;flex-shrink:0;background:var(--bg-sub)}
+.ev-thumb img{width:100%;height:100%;object-fit:cover}
+.ev-thumb-ph{width:72px;flex-shrink:0;background:var(--bg-sub);display:flex;align-items:center;justify-content:center;font-size:var(--text-9);color:var(--l4)}
+.ev-body{flex:1;padding:var(--item-gap) 0 var(--item-gap) var(--group-gap)}
+.ev-date{display:flex;align-items:baseline;gap:5px;margin-bottom:var(--item-gap)}
+.ev-num{font-size:var(--text-22);font-weight:var(--fw-medium);line-height:1}
+.ev-dow{font-size:var(--text-11);color:var(--l2)}
+.ev-mon{font-size:var(--text-11);color:var(--l3)}
+.ev-title{font-size:var(--text-13);font-weight:var(--fw-medium);line-height:var(--lh-heading);margin-bottom:3px}
+.ev-cast{font-size:var(--text-11);color:var(--l2);line-height:var(--lh-list);margin-bottom:var(--item-gap)}
+.ev-foot{display:flex;gap:6px;align-items:center;font-size:var(--text-11);color:var(--l3)}
+.tag{font-size:var(--text-9);padding:1px 6px;border-radius:1px;border:0.5px solid rgba(106,159,216,0.3);color:var(--sat);letter-spacing:0.06em}
+.sat{color:var(--sat)}
+.sun{color:var(--sun)}
+.more-btn{display:block;width:100%;padding:10px;text-align:center;border:0.5px solid var(--border-mid);border-radius:var(--radius);background:transparent;color:var(--l2);font-size:var(--text-11);letter-spacing:0.08em;font-family:var(--font)}
+.sync{display:flex;align-items:center;gap:6px;font-size:var(--text-9);color:var(--l4);padding:10px 0}
+.sync-dot{width:5px;height:5px;border-radius:50%;background:#4a9;animation:pulse 2.5s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.2}}
-.info-strip{display:flex;border-bottom:0.5px solid var(--border)}
-.info-item{flex:1;padding:18px 14px;text-align:center;border-right:0.5px solid var(--border)}
-.info-item:last-child{border-right:none}
-.info-label{font-size:8px;letter-spacing:0.16em;color:rgba(240,237,232,0.2);margin-bottom:6px}
-.info-val{font-size:11px;color:rgba(240,237,232,0.55);line-height:1.5}
-.contact-section{padding:24px 20px;border-bottom:0.5px solid var(--border)}
-.contact-list{display:flex;flex-direction:column}
-.contact-item{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:0.5px solid var(--border);text-decoration:none;color:inherit;cursor:pointer;transition:opacity 0.18s}
-.contact-item:first-child{border-top:0.5px solid var(--border)}
-.contact-item:last-child{border-bottom:none}
-.contact-item:hover{opacity:0.55}
-.contact-label{font-size:9px;letter-spacing:0.12em;color:rgba(240,237,232,0.22);min-width:70px}
-.contact-val{font-size:12px;color:var(--white);flex:1}
-.contact-arrow{font-size:14px;color:rgba(240,237,232,0.18)}
-footer{padding:18px 20px 36px;display:flex;justify-content:space-between;align-items:center}
-.footer-logo{font-size:10px;color:rgba(240,237,232,0.15);letter-spacing:0.1em}
-.footer-social{display:flex;gap:16px}
-.footer-social a{font-size:17px;color:rgba(240,237,232,0.18);text-decoration:none;transition:color 0.2s}
-.footer-social a:hover{color:rgba(240,237,232,0.6)}
-@media(min-width:768px){
-  .hamburger{display:none}
-  .nav{padding:14px 40px}
-  .nav-desktop-links{display:flex!important;gap:28px;list-style:none}
-  .nav-desktop-links a{font-size:11px;letter-spacing:0.12em;color:rgba(240,237,232,0.4);text-decoration:none;transition:color 0.2s}
-  .nav-desktop-links a:hover{color:var(--white)}
-  .today-section,.schedule-section,.contact-section{padding-left:40px;padding-right:40px;max-width:800px;margin-left:auto;margin-right:auto}
-  .today-section{padding-top:88px}
-  .info-strip,.footer{max-width:800px;margin-left:auto;margin-right:auto}
-  .flyer{width:88px;height:88px}
-  .today-title{font-size:17px}
-}
+
+.news{padding:0 var(--page-pad) var(--sec-gap)}
+.news-item{display:flex;gap:var(--group-gap);padding:var(--item-gap) 0;border-bottom:0.5px solid var(--border);align-items:flex-start}
+.news-item:first-child{border-top:0.5px solid var(--border)}
+.news-item:last-child{border-bottom:none}
+.news-date{font-size:var(--text-11);color:var(--l3);min-width:52px;font-weight:var(--fw-light);padding-top:2px}
+.news-cat{font-size:var(--text-9);color:var(--accent);letter-spacing:0.08em;margin-bottom:3px;opacity:0.8}
+.news-title{font-size:var(--text-13);line-height:var(--lh-heading)}
+
+.footer{padding:var(--sec-gap) var(--page-pad);border-top:0.5px solid var(--border)}
+.footer-logo img{height:52px;mix-blend-mode:screen;margin-bottom:var(--group-gap)}
+.footer-addr{font-size:var(--text-11);color:var(--l2);line-height:var(--lh-body);margin-bottom:var(--group-gap);font-weight:var(--fw-light)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:var(--group-gap);margin-bottom:var(--group-gap)}
+.footer-nav a{font-size:var(--text-11);color:var(--l3);letter-spacing:0.08em}
+.footer-sns{display:flex;gap:var(--group-gap);margin-bottom:var(--group-gap)}
+.footer-sns a{color:var(--l3);display:flex}
+.footer-copy{font-size:var(--text-9);color:var(--l4);letter-spacing:0.06em}
 </style>
 </head>
 <body>
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="closeMobileMenu()" aria-label="閉じる">&times;</button>
-  <a href="#schedule" onclick="closeMobileMenu()">SCHEDULE</a>
-  <a href="#contact" onclick="closeMobileMenu()">CONTACT</a>
-  <a href="rental.html" onclick="closeMobileMenu()">RENTAL</a>
-  <a href="access.html" onclick="closeMobileMenu()">ACCESS</a>
-</div>
+
 <nav class="nav">
-  <a href="/" class="nav-logo">六本木SCHOOL</a>
-  <ul class="nav-desktop-links" style="display:none">
-    <li><a href="#schedule">SCHEDULE</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-    <li><a href="rental.html">RENTAL</a></li>
-    <li><a href="access.html">ACCESS</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang">
-      <button class="lang-btn lang-on" id="btnJa" onclick="setLang('ja')">JP</button>
-      <button class="lang-btn lang-off" id="btnEn" onclick="setLang('en')">EN</button>
-    </div>
-    <button class="hamburger" onclick="openMobileMenu()" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="六本木SCHOOL">
   </div>
+  <button class="nav-hb" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<section class="today-section">
-  <div class="section-hd">
-    <span>TODAY'S SCHOOL</span>
-    <div class="hd-line"></div>
-    <span class="today-date-str" id="todayDateStr"></span>
+
+<div class="sh sh-center">本日 5/29(THU) のイベント</div>
+<div class="today">
+  <div class="today-title">ROPPONGI SOUNDSCAPE vol.13</div>
+  <div class="today-artists">夏野菜ゆみ<br>どっちつかズ<br>New Love New Light</div>
+  <div class="info-rows">
+    <div class="info-row">
+      <span class="info-label">OPEN / START</span>
+      <span class="info-val">19:00 / 19:30</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">ADV / DOOR</span>
+      <span class="info-val">¥2,400 / ¥2,900 (+1D)</span>
+    </div>
   </div>
-  <div id="todayContent"></div>
-</section>
-<section class="schedule-section" id="schedule">
-  <div class="section-hd" style="margin-bottom:14px"><span>SCHEDULE</span></div>
-  <div class="ev-list" id="scheduleList"></div>
-  <button class="show-more" id="showMoreBtn" style="display:none" onclick="showMore()">もっと見る</button>
-  <div class="sync-badge">
-    <div class="sync-dot"></div>
-    <span data-ja="Notionと連携 · 自動更新" data-en="Auto-synced with Notion">Notionと連携 · 自動更新</span>
-  </div>
-</section>
-<div class="info-strip">
-  <div class="info-item">
-    <div class="info-label">LOCATION</div>
-    <div class="info-val" data-ja="港区六本木<br>5-16-5 B1" data-en="Roppongi, Minato<br>5-16-5 B1">港区六本木<br>5-16-5 B1</div>
-  </div>
-  <div class="info-item">
-    <div class="info-label">CAPACITY</div>
-    <div class="info-val" data-ja="スタンディング 250<br>着席 100" data-en="Standing 250<br>Seated 100">スタンディング 250<br>着席 100</div>
-  </div>
-  <div class="info-item">
-    <div class="info-label">TRAIN</div>
-    <div class="info-val" data-ja="日比谷線<br>徒歩3分" data-en="Hibiya Line<br>3 min walk">日比谷線<br>徒歩3分</div>
-  </div>
+  <a class="more-link" href="event.html?id=20260428">詳細を見る →</a>
 </div>
-<section class="contact-section" id="contact">
-  <div class="section-hd" style="margin-bottom:14px"><span>CONTACT</span></div>
-  <div class="contact-list">
-    <a href="mailto:info@schoolivebar.com" class="contact-item">
-      <span class="contact-label" data-ja="一般・レンタル" data-en="General">一般・レンタル</span>
-      <span class="contact-val">info@schoolivebar.com</span>
-      <span class="contact-arrow">→</span>
-    </a>
-    <a href="mailto:miya@schoolivebar.com" class="contact-item">
-      <span class="contact-label" data-ja="ブッキング" data-en="Booking">ブッキング</span>
-      <span class="contact-val">miya@schoolivebar.com</span>
-      <span class="contact-arrow">→</span>
-    </a>
-    <a href="https://page.line.me/067inrki" target="_blank" class="contact-item">
-      <span class="contact-label">LINE</span>
-      <span class="contact-val" data-ja="LINE公式アカウント" data-en="LINE Official">LINE公式アカウント</span>
-      <span class="contact-arrow">→</span>
-    </a>
-    <a href="https://forms.gle/46AVYJHFmXbBXKqi8" target="_blank" class="contact-item">
-      <span class="contact-label" data-ja="スタッフ募集" data-en="Jobs">スタッフ募集</span>
-      <span class="contact-val" data-ja="アルバイトスタッフ募集中" data-en="Part-time staff wanted">アルバイトスタッフ募集中</span>
-      <span class="contact-arrow">→</span>
-    </a>
+
+<div class="sh">PICK UP<div class="sh-line"></div></div>
+<div class="pickup">
+  <a class="pickup-card" href="event.html?id=20260530">
+    <div class="pickup-thumb">
+      <img src="https://res.cloudinary.com/dydcdigj4/image/upload/20260428_png" alt="">
+    </div>
+    <div class="pickup-body">
+      <div class="pickup-date">05.30 <span class="sat">SAT</span></div>
+      <div class="pickup-artists">空気公団solo / guest 笹原 清明</div>
+      <div class="pickup-sub">空気公団solo 〜 UTAUTABI 〜</div>
+      <div class="pickup-foot"><span>17:00 / 17:30</span><span class="tag">LIVE</span></div>
+    </div>
+  </a>
+  <a class="pickup-card" href="event.html?id=20260606">
+    <div class="pickup-thumb">
+      <img src="https://res.cloudinary.com/dydcdigj4/image/upload/3_10" alt="">
+    </div>
+    <div class="pickup-body">
+      <div class="pickup-date">06.06 <span class="sat">SAT</span></div>
+      <div class="pickup-artists">コダマカプセル / FROITO / La muzzle / どっちつかズ</div>
+      <div class="pickup-sub">光化学の世界 vol.2</div>
+      <div class="pickup-foot"><span>17:00 / 17:30</span><span class="tag">LIVE</span></div>
+    </div>
+  </a>
+</div>
+
+<div class="sh">SCHEDULE<div class="sh-line"></div></div>
+<div class="ev-list">
+  <a class="ev-row" href="event.html?id=20260607">
+    <div class="ev-thumb">
+      <img src="https://res.cloudinary.com/dydcdigj4/image/upload/3_10" alt="">
+    </div>
+    <div class="ev-body">
+      <div class="ev-date">
+        <div class="ev-num">07</div>
+        <div class="ev-dow sat">SAT</div>
+        <div class="ev-mon">JUN</div>
+      </div>
+      <div class="ev-title">浜浦彩乃 Birthday Live</div>
+      <div class="ev-cast">vo.浜浦彩乃 / gt.滝沢ジョー / Key.biki</div>
+      <div class="ev-foot"><span>12:40 / 13:10</span><span class="tag">LIVE</span></div>
+    </div>
+  </a>
+  <a class="ev-row" href="event.html?id=20260610">
+    <div class="ev-thumb-ph">PHOTO</div>
+    <div class="ev-body">
+      <div class="ev-date">
+        <div class="ev-num">10</div>
+        <div class="ev-dow">WED</div>
+        <div class="ev-mon">JUN</div>
+      </div>
+      <div class="ev-title">ROPPONGI EXTENSION vol.1</div>
+      <div class="ev-cast">ヤジマX / ハシグチカナデリヤ / さかいかの</div>
+      <div class="ev-foot"><span>18:30 / 19:00</span><span class="tag">LIVE</span></div>
+    </div>
+  </a>
+  <a class="ev-row" href="event.html?id=20260625">
+    <div class="ev-thumb-ph">PHOTO</div>
+    <div class="ev-body">
+      <div class="ev-date">
+        <div class="ev-num">25</div>
+        <div class="ev-dow sat">SAT</div>
+        <div class="ev-mon">JUN</div>
+      </div>
+      <div class="ev-title">Roppongi Soundscape vol.14</div>
+      <div class="ev-cast">志摩陽立 / 水泳 / cambelle / ぼんち</div>
+      <div class="ev-foot"><span class="tag">LIVE</span></div>
+    </div>
+  </a>
+</div>
+<div style="padding:0 var(--page-pad) var(--sec-gap)">
+  <button class="more-btn" onclick="location.href='schedule.html'">もっと見る →</button>
+  <div class="sync"><div class="sync-dot"></div>Notionと連携 · 自動更新</div>
+</div>
+
+<div class="sh">NEWS<div class="sh-line"></div></div>
+<div class="news">
+  <a class="news-item" href="#">
+    <div class="news-date">05.20</div>
+    <div><div class="news-cat">お知らせ</div><div class="news-title">6月のスケジュールを更新しました</div></div>
+  </a>
+  <a class="news-item" href="#">
+    <div class="news-date">05.10</div>
+    <div><div class="news-cat">スタッフ募集</div><div class="news-title">アルバイトスタッフを募集しています</div></div>
+  </a>
+  <a class="news-item" href="#">
+    <div class="news-date">04.28</div>
+    <div><div class="news-cat">お知らせ</div><div class="news-title">GW期間中の営業について</div></div>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="footer-logo"><img src="images/logo.png" alt="六本木SCHOOL"></div>
+  <div class="footer-addr">港区六本木5-16-5 インペリアル六本木B1<br>東京メトロ日比谷線「六本木」徒歩3分</div>
+  <div class="footer-nav">
+    <a href="schedule.html">SCHEDULE</a>
+    <a href="rental.html">RENTAL</a>
+    <a href="about.html">ABOUT</a>
+    <a href="faq.html">FAQ</a>
+    <a href="news.html">NEWS</a>
+    <a href="contact.html">CONTACT</a>
   </div>
-</section>
-<footer>
-  <div class="footer-logo">六本木SCHOOL LIVE BAR TOKYO</div>
-  <div class="footer-social">
-    <a href="https://x.com/schoolivebar" target="_blank" aria-label="X">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/schoolivebar" target="_blank" aria-label="Instagram">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <a href="https://page.line.me/067inrki" target="_blank" aria-label="LINE">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    </a>
+  <div class="footer-sns">
+    <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+    <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="#" aria-label="LINE"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
   </div>
+  <div class="footer-copy">© 2026 六本木SCHOOL LIVE BAR TOKYO</div>
 </footer>
-<script>
-var EVENTS_URL='https://raw.githubusercontent.com/school-livebar-tokyo/schoolivebar.com/main/events.json';
-var ALL_EVENTS=[];
-var SHOW_COUNT=5;
-var days=['SUN','MON','TUE','WED','THU','FRI','SAT'];
-var months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-function pad(n){return String(n).padStart(2,'0')}
-function todayStr(){var d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
-function setLang(lang){
-  document.getElementById('btnJa').className='lang-btn '+(lang==='ja'?'lang-on':'lang-off');
-  document.getElementById('btnEn').className='lang-btn '+(lang==='en'?'lang-on':'lang-off');
-  document.querySelectorAll('[data-'+lang+']').forEach(function(el){el.innerHTML=el.getAttribute('data-'+lang)});
-}
-function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden'}
-function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow=''}
-function tagClass(t){if(t==='DJ')return 'tag-dj';if(t==='PRIVATE')return 'tag-private';if(t==='EVENT')return 'tag-event';return 'tag-live'}
-function dowClass(d){if(d==='SAT')return ' sat';if(d==='SUN')return ' sun';return ''}
-function renderToday(events){
-  var ts=todayStr();
-  var todayEvents=events.filter(function(e){return e.date===ts});
-  var el=document.getElementById('todayContent');
-  var now=new Date();
-  document.getElementById('todayDateStr').textContent=now.getFullYear()+'.'+pad(now.getMonth()+1)+'.'+pad(now.getDate())+' '+days[now.getDay()];
-  if(todayEvents.length===0){el.innerHTML='<div class="no-event">本日のイベントはありません</div>';return}
-  var ev=todayEvents[0];
-  el.innerHTML='<div class="today-card"><div class="flyer">FLYER</div><div class="today-info"><div class="today-title">'+ev.title+'</div>'+(ev.artists?'<div class="today-cast">'+ev.artists.replace(/\n/g,' / ')+'</div>':'')+'<div class="today-meta">'+(ev.time?'<span>'+ev.time+'</span>':'')+(ev.price?'<span>'+ev.price+'</span>':'')+'</div></div></div>'+(ev.ticketUrl&&ev.ticketUrl!=='#'?'<a href="'+ev.ticketUrl+'" target="_blank" class="ticket-btn">TICKET →</a>':'')+(todayEvents.length>1?'<div class="today-count">他 '+(todayEvents.length-1)+' イベント</div>':'');
-}
-function renderRow(ev){
-  var d=new Date(ev.date+'T00:00:00');
-  var dow=days[d.getDay()];
-  var dc=dowClass(dow);
-  return '<a href="'+(ev.url&&ev.url!=='#'?ev.url:'#')+'" class="ev-row"><div class="ev-date"><div class="ev-num">'+pad(d.getDate())+'</div><div class="ev-dow'+dc+'">'+dow+' '+months[d.getMonth()]+'</div></div><div class="ev-vline"></div><div class="ev-body"><div class="ev-title">'+ev.title+'</div>'+(ev.artists?'<div class="ev-cast">'+ev.artists.replace(/\n/g,' / ')+'</div>':'')+'<div class="ev-foot">'+(ev.time?'<span class="ev-time">'+ev.time+'</span>':'')+(ev.price?'<span class="ev-price">'+ev.price+'</span>':'')+'<span class="ev-tag '+tagClass(ev.type)+'">'+(ev.type||'LIVE')+'</span></div></div></a>';
-}
-function renderSchedule(){
-  var ts=todayStr();
-  var future=ALL_EVENTS.filter(function(e){return e.date>=ts});
-  var list=document.getElementById('scheduleList');
-  var btn=document.getElementById('showMoreBtn');
-  if(future.length===0){list.innerHTML='<p style="font-size:12px;color:rgba(240,237,232,0.2);padding:20px 0;letter-spacing:0.08em;">スケジュールを準備中です。</p>';return}
-  list.innerHTML=future.slice(0,SHOW_COUNT).map(renderRow).join('');
-  if(future.length>SHOW_COUNT){btn.style.display='block';btn.textContent='もっと見る ('+(future.length-SHOW_COUNT)+')'}
-  else{btn.style.display='none'}
-}
-function showMore(){SHOW_COUNT+=10;renderSchedule()}
-fetch(EVENTS_URL).then(function(r){return r.json()}).then(function(data){ALL_EVENTS=data;renderToday(data);renderSchedule()}).catch(function(){document.getElementById('todayContent').innerHTML='<div class="no-event">読み込み中...</div>';document.getElementById('scheduleList').innerHTML='<p style="font-size:12px;color:rgba(240,237,232,0.2);padding:20px 0;">スケジュールを準備中です。</p>'});
-if(window.innerWidth>=768){var dl=document.querySelector('.nav-desktop-links');if(dl)dl.style.display='flex';var hb=document.querySelector('.hamburger');if(hb)hb.style.display='none'}
-</script>
+
 </body>
 </html>
