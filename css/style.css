@@ -1,1 +1,473 @@
+/* ============================================
+   六本木SCHOOL LIVE BAR TOKYO
+   style.css — デザインシステム基盤
+   ============================================ */
 
+/* --------------------------------------------
+   Google Fonts
+   -------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap');
+
+/* --------------------------------------------
+   CSS Variables（デザイントークン）
+   -------------------------------------------- */
+:root {
+  /* フォント */
+  --font: 'Zen Kaku Gothic New', sans-serif;
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+
+  /* フォントサイズ */
+  --text-9:  9px;   /* タグ・装飾のみ */
+  --text-11: 11px;  /* ラベル・補足（最小） */
+  --text-13: 13px;  /* 本文・キャスト */
+  --text-14: 14px;  /* タイトル・セクションヘッダー */
+  --text-17: 17px;  /* 出演者名 */
+  --text-22: 22px;  /* セクション日付 */
+  --text-42: 42px;  /* 日付（大） */
+
+  /* 行間 */
+  --lh-heading: 1.2;
+  --lh-body:    1.8;
+  --lh-list:    1.5;
+
+  /* カラー */
+  --bg:     #0c0c0c;
+  --bg-sub: #141414;
+
+  /* テキスト4段階 */
+  --l1: #f0ede8;
+  --l2: rgba(240, 237, 232, 0.55);
+  --l3: rgba(240, 237, 232, 0.35);
+  --l4: rgba(240, 237, 232, 0.2);
+
+  /* ボーダー */
+  --border:     rgba(240, 237, 232, 0.07);
+  --border-mid: rgba(240, 237, 232, 0.14);
+
+  /* アクセント */
+  --accent:  #c8b89a;
+  --sat:     #6a9fd8;  /* 土曜日 */
+  --sun:     #c46a6a;  /* 日曜日 */
+
+  /* スペーシング */
+  --sp-8:  8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-28: 28px;
+  --sp-32: 32px;
+  --sp-40: 40px;
+  --sp-48: 48px;
+
+  /* 左右余白 */
+  --page-pad:   24px;  /* トップ・一覧 */
+  --detail-pad: 28px;  /* 詳細ページ */
+
+  /* セクション間隔 */
+  --sec-gap:    32px;
+  --group-gap:  16px;
+  --item-gap:   8px;
+
+  /* ボーダー半径 */
+  --radius: 2px;
+}
+
+/* --------------------------------------------
+   リセット・ベース
+   -------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-13);
+  line-height: var(--lh-body);
+  color: var(--l1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --------------------------------------------
+   ユーティリティ
+   -------------------------------------------- */
+.l1 { color: var(--l1); }
+.l2 { color: var(--l2); }
+.l3 { color: var(--l3); }
+.l4 { color: var(--l4); }
+
+.fw-light   { font-weight: var(--fw-light); }
+.fw-regular { font-weight: var(--fw-regular); }
+.fw-medium  { font-weight: var(--fw-medium); }
+
+.sat { color: var(--sat); }
+.sun { color: var(--sun); }
+
+/* --------------------------------------------
+   ナビゲーション（共通）
+   -------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px var(--page-pad);
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo img {
+  height: 70px;
+  mix-blend-mode: screen;
+}
+
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 0.5px;
+  background: var(--l1);
+}
+
+/* 詳細ページナビ */
+.nav-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px var(--detail-pad);
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-back {
+  font-size: var(--text-11);
+  color: var(--l2);
+  font-weight: var(--fw-light);
+  letter-spacing: 0.06em;
+}
+
+.nav-mark img {
+  height: 40px;
+  mix-blend-mode: screen;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------
+   セクションヘッダー
+   -------------------------------------------- */
+.sec-hd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: var(--sec-gap) var(--page-pad) var(--sp-16);
+  font-size: var(--text-14);
+  font-weight: var(--fw-medium);
+  color: var(--l1);
+  letter-spacing: 0.06em;
+}
+
+.sec-hd-line {
+  flex: 1;
+  height: 0.5px;
+  background: var(--border);
+}
+
+/* --------------------------------------------
+   ボタン
+   -------------------------------------------- */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  text-align: center;
+  background: var(--l1);
+  color: var(--bg);
+  border-radius: var(--radius);
+  font-size: var(--text-11);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.14em;
+  font-family: var(--font);
+}
+
+.btn-outline {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: 0.5px solid var(--border-mid);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--l2);
+  font-size: var(--text-11);
+  letter-spacing: 0.12em;
+  font-weight: var(--fw-light);
+  font-family: var(--font);
+}
+
+/* --------------------------------------------
+   タグ
+   -------------------------------------------- */
+.tag {
+  font-size: var(--text-9);
+  padding: 1px 6px;
+  border-radius: 1px;
+  border: 0.5px solid rgba(106, 159, 216, 0.3);
+  color: var(--sat);
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------
+   フッター
+   -------------------------------------------- */
+.footer {
+  padding: var(--sp-32) var(--page-pad) var(--sp-48);
+  border-top: 0.5px solid var(--border);
+}
+
+.footer-logo img {
+  height: 52px;
+  mix-blend-mode: screen;
+  margin-bottom: var(--sp-16);
+}
+
+.footer-addr {
+  font-size: var(--text-11);
+  color: var(--l2);
+  line-height: var(--lh-body);
+  margin-bottom: var(--sp-16);
+  font-weight: var(--fw-light);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-16);
+}
+
+.footer-nav a {
+  font-size: var(--text-11);
+  color: var(--l3);
+  letter-spacing: 0.08em;
+}
+
+.footer-sns {
+  display: flex;
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-16);
+}
+
+.footer-sns a {
+  color: var(--l3);
+  display: flex;
+}
+
+.footer-copy {
+  font-size: var(--text-9);
+  color: var(--l4);
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------
+   イベントカード（スケジュール一覧用）
+   -------------------------------------------- */
+.ev-card {
+  display: flex;
+  border-bottom: 0.5px solid var(--border);
+  cursor: pointer;
+}
+
+.ev-card:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.ev-card-thumb {
+  width: 72px;
+  flex-shrink: 0;
+  background: var(--bg-sub);
+}
+
+.ev-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ev-card-body {
+  flex: 1;
+  padding: var(--sp-8) 0 var(--sp-8) var(--sp-16);
+}
+
+.ev-card-date {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: var(--sp-8);
+}
+
+.ev-card-num {
+  font-size: var(--text-22);
+  font-weight: var(--fw-medium);
+  color: var(--l1);
+  line-height: 1;
+}
+
+.ev-card-dow {
+  font-size: var(--text-11);
+  color: var(--l2);
+}
+
+.ev-card-mon {
+  font-size: var(--text-11);
+  color: var(--l3);
+}
+
+.ev-card-title {
+  font-size: var(--text-13);
+  font-weight: var(--fw-medium);
+  color: var(--l1);
+  line-height: var(--lh-heading);
+  margin-bottom: 3px;
+}
+
+.ev-card-cast {
+  font-size: var(--text-11);
+  color: var(--l2);
+  line-height: var(--lh-list);
+  margin-bottom: var(--sp-8);
+}
+
+.ev-card-foot {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: var(--text-11);
+  color: var(--l3);
+}
+
+/* --------------------------------------------
+   PICKUPカード
+   -------------------------------------------- */
+.pickup-card {
+  display: flex;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pickup-thumb {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.pickup-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pickup-body {
+  flex: 1;
+  padding: var(--sp-16);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pickup-date {
+  font-size: var(--text-13);
+  font-weight: var(--fw-medium);
+  color: var(--l1);
+  margin-bottom: var(--sp-8);
+}
+
+.pickup-artists {
+  font-size: var(--text-13);
+  font-weight: var(--fw-medium);
+  color: var(--l1);
+  line-height: var(--lh-list);
+  margin-bottom: var(--sp-8);
+}
+
+.pickup-sub {
+  font-size: var(--text-11);
+  color: var(--l2);
+  margin-bottom: var(--sp-8);
+}
+
+.pickup-foot {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: var(--text-11);
+  color: var(--l3);
+}
+
+/* --------------------------------------------
+   情報行（OPEN/START・ADV/DOOR等）
+   -------------------------------------------- */
+.info-row {
+  display: flex;
+  gap: var(--sp-16);
+  padding: var(--sp-8) 0;
+  border-bottom: 0.5px solid var(--border);
+  align-items: baseline;
+}
+
+.info-row:first-child {
+  border-top: 0.5px solid var(--border);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: var(--text-11);
+  color: var(--l3);
+  min-width: 88px;
+  font-weight: var(--fw-light);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.info-val {
+  font-size: var(--text-11);
+  color: var(--l1);
+  font-weight: var(--fw-regular);
+}
