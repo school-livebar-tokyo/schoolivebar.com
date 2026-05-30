@@ -61,7 +61,7 @@
     "price": "Adv ¥1,900- / Door ¥2,400-",
     "type": "LIVE",
     "snsPosted": true,
-    "pickup": false,
+    "pickup": true,
     "images": [],
     "url": "#"
   }
