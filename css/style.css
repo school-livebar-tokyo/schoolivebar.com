@@ -105,7 +105,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   padding: var(--sec-gap) var(--page-pad) var(--sp-16);
   font-size: var(--text-13);
   font-weight: var(--fw-semi);
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.75);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -169,10 +169,10 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 .footer-nav a {
   font-size: var(--text-11); font-weight: var(--fw-medium);
-  color: var(--l4); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--l2); letter-spacing: 0.12em; text-transform: uppercase;
 }
 .footer-sns {
   display: flex; gap: 28px; margin-bottom: var(--sp-16);
 }
-.footer-sns a { color: rgba(255,255,255,0.7); display: flex; }
-.footer-copy { font-size: var(--text-9); color: var(--l4); letter-spacing: 0.08em; }
+.footer-sns a { color: rgba(255,255,255,0.85); display: flex; }
+.footer-copy { font-size: var(--text-9); color: var(--l3); letter-spacing: 0.08em; }
