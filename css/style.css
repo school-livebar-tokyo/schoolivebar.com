@@ -105,7 +105,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   padding: var(--sec-gap) var(--page-pad) var(--sp-16);
   font-size: var(--text-13);
   font-weight: var(--fw-semi);
-  color: var(--l3);
+  color: rgba(255,255,255,0.55);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }

@@ -112,7 +112,8 @@
 }
 .pickup-info { display: flex; flex-direction: column; gap: 4px; }
 /* 日付：l3・11px・曜日色分け */
-.pickup-date { font-size: var(--text-13); font-weight: var(--fw-regular); color: var(--l2); }
+.pickup-date { font-size: var(--text-24); font-weight: 600; color: var(--l1); line-height: 1; margin-bottom: 4px; }
+.pickup-date .dow { font-size: var(--text-13); font-weight: var(--fw-medium); color: var(--l2); }
 .pickup-date .sat { color: var(--sat); }
 .pickup-date .sun { color: var(--sun); }
 /* タイトル：l2・13px・lh-heading */
@@ -391,8 +392,10 @@ function renderToday(events) {
     meta += '<span class="today-meta-label">Open / Start</span>'
           + '<span class="today-meta-val">' + sanitize(openStart) + '</span>';
   }
+  if (openStart && ticketPrice) {
+    meta += '<span class="today-meta-sep">·</span>';
+  }
   if (ticketPrice) {
-    if (openStart) meta += '<span class="today-meta-sep">·</span>';
     meta += '<span class="today-meta-val">' + sanitize(ticketPrice) + '</span>';
   }
   if (meta) {
@@ -424,8 +427,9 @@ function renderPickup(events) {
   pickups.forEach(function(e) {
     var d = parseDate(e.date);
     var dowClass = getDowClass(d);
-    var dateStr = (d.getMonth()+1) + '.' + ('0'+d.getDate()).slice(-2)
-      + ' <span class="' + dowClass + '">' + DAYS_EN[d.getDay()] + '</span>';
+    var dateStr = '<span style="font-size:var(--text-24);font-weight:600;color:var(--l1);line-height:1">' + ('0'+d.getDate()).slice(-2) + '</span>'
+      + ' <span class="dow ' + dowClass + '" style="font-size:var(--text-13);font-weight:500;margin-left:4px">' + DAYS_EN[d.getDay()] + '</span>'
+      + ' <span style="font-size:var(--text-11);color:var(--l2);margin-left:2px">' + ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'][d.getMonth()] + '</span>';
     var flyerUrl = (e.images && e.images[0]) || e.flyer_url || '';
     var img = flyerUrl
       ? '<img src="' + sanitize(flyerUrl) + '" alt="' + sanitize(e.title) + '" loading="lazy">'
