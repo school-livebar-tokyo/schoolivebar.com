@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>六本木SCHOOL LIVE BAR TOKYO — ライブ・DJ・イベント対応の多目的スペース</title>
 <meta name="description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・配信に対応した六本木の多目的ライブスペース。港区六本木5-16-5 インペリアル六本木B1。">
-<meta name="keywords" content="六本木SCHOOL,ライブハウス,六本木,ライブバー,DJ,イベント,ライブ,東京,roppongi">
 <link rel="canonical" href="https://schoolivebar.com/">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://schoolivebar.com/">
 <meta property="og:title" content="六本木SCHOOL LIVE BAR TOKYO">
@@ -16,316 +13,239 @@
 <meta property="og:image" content="https://schoolivebar.com/images/ogp.jpg">
 <meta property="og:site_name" content="六本木SCHOOL LIVE BAR TOKYO">
 <meta property="og:locale" content="ja_JP">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@SCHOOLLIVEBAR">
 <meta name="twitter:title" content="六本木SCHOOL LIVE BAR TOKYO">
-<meta name="twitter:description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・配信に対応した六本木の多目的ライブスペース。">
 <meta name="twitter:image" content="https://schoolivebar.com/images/ogp.jpg">
-
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicVenue",
-  "name": "六本木SCHOOL LIVE BAR TOKYO",
-  "url": "https://schoolivebar.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "六本木5-16-5 インペリアル六本木B1",
-    "addressLocality": "港区",
-    "addressRegion": "東京都",
-    "postalCode": "106-0032",
-    "addressCountry": "JP"
-  },
-  "telephone": "03-5545-5758",
-  "sameAs": [
-    "https://twitter.com/SCHOOLLIVEBAR",
-    "https://www.instagram.com/schoollivebartokyo/"
-  ]
-}
+{"@context":"https://schema.org","@type":"MusicVenue","name":"六本木SCHOOL LIVE BAR TOKYO","url":"https://schoolivebar.com","address":{"@type":"PostalAddress","streetAddress":"六本木5-16-5 インペリアル六本木B1","addressLocality":"港区","addressRegion":"東京都","postalCode":"106-0032","addressCountry":"JP"},"telephone":"03-5545-5758"}
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-
 <style>
-/* ============================================
-   index.html 固有スタイル
-   ============================================ */
-
-/* HERO */
-.hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 60vw;
-  display: flex;
-  align-items: flex-end;
+/* ----------------------------------------
+   TODAY'S SCHOOL
+   ---------------------------------------- */
+.today-wrap {
+  padding: 0 var(--page-pad) var(--sec-gap);
 }
-.hero-bg { position: absolute; inset: 0; background: var(--bg-sub); }
-.hero-bg img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
-  filter: blur(3px);
-  transform: scale(1.06);
-}
-.hero-gradient {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(12,12,12,0.0) 0%,
-    rgba(12,12,12,0.5) 40%,
-    rgba(12,12,12,0.98) 100%
-  );
-}
-.hero-body {
-  position: relative; z-index: 2;
-  width: 100%;
-  padding: var(--sp-40) var(--page-pad) var(--sp-32);
-}
-.hero-eyebrow {
-  display: flex; align-items: center; gap: 8px;
-  margin-bottom: var(--sp-12);
-}
-.hero-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
-.hero-label {
-  font-size: var(--text-9);
-  font-weight: var(--fw-light);
-  letter-spacing: 0.25em;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-.hero-date {
-  font-size: var(--text-13);
-  font-weight: var(--fw-light);
-  color: var(--l3);
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
-}
-.hero-ev-title {
-  font-size: var(--text-15);
-  font-weight: var(--fw-light);
-  color: var(--l2);
-  margin-bottom: var(--sp-12);
-  letter-spacing: 0.04em;
-}
-.hero-artists {
+/* アーティスト名：l1・20px・lh-list */
+.today-artists {
   font-size: var(--text-20);
   font-weight: var(--fw-medium);
   color: var(--l1);
   line-height: var(--lh-list);
-  margin-bottom: var(--sp-20);
-  letter-spacing: 0.02em;
+  margin-bottom: var(--sp-8);
 }
-.hero-meta {
-  display: flex; gap: var(--sp-24);
-  margin-bottom: var(--sp-20);
-  padding-top: var(--sp-12);
+/* タイトル：l2・15px・lh-heading */
+.today-title {
+  font-size: var(--text-15);
+  font-weight: var(--fw-light);
+  color: var(--l2);
+  line-height: var(--lh-heading);
+  margin-bottom: var(--sp-12);
+}
+/* Open/Start + Door：一行 */
+.today-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: var(--sp-8);
   border-top: 0.5px solid var(--border);
 }
-.hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
-.hero-meta-label {
-  font-size: var(--text-9);
-  font-weight: var(--fw-light);
-  color: var(--l4);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-.hero-meta-val {
-  font-size: var(--text-15);
-  color: var(--l2);
-  font-weight: var(--fw-regular);
-}
-.hero-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: var(--text-13);
+.today-meta-label {
+  font-size: var(--text-11);
   font-weight: var(--fw-light);
   color: var(--l3);
   letter-spacing: 0.08em;
-  border-bottom: 0.5px solid var(--border-mid);
-  padding-bottom: 2px;
+  text-transform: uppercase;
 }
+.today-meta-val {
+  font-size: var(--text-13);
+  font-weight: var(--fw-regular);
+  color: var(--l2);
+}
+.today-meta-sep { font-size: var(--text-11); color: var(--l4); margin: 0 4px; }
 
-/* PICKUP 横スクロール */
+/* ----------------------------------------
+   PICK UP（カルーセル）
+   ---------------------------------------- */
 .pickup-scroll {
-  display: flex; gap: 12px;
+  display: flex;
+  gap: 12px;
   overflow-x: auto;
-  scrollbar-width: none; -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   padding: 0 var(--page-pad) var(--sec-gap);
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--page-pad);
+  -webkit-overflow-scrolling: touch;
 }
 .pickup-scroll::-webkit-scrollbar { display: none; }
 
 .pickup-card {
-  flex-shrink: 0; width: 148px;
-  display: flex; flex-direction: column; gap: 10px;
-  text-decoration: none; color: inherit;
+  flex-shrink: 0;
+  /* 65vw - page-pad*2 で左右余白を確保しつつ1.5枚見える */
+  width: calc(65vw - var(--page-pad));
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
 }
 .pickup-flyer {
-  width: 148px; aspect-ratio: 4/5;
-  border-radius: 4px; overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  overflow: hidden;
   background: var(--bg-sub);
 }
 .pickup-flyer img { width: 100%; height: 100%; object-fit: cover; }
 .pickup-flyer-ph {
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
-  font-size: var(--text-9); color: var(--l4); letter-spacing: 0.12em;
+  font-size: var(--text-9); color: var(--l4);
 }
 .pickup-info { display: flex; flex-direction: column; gap: 4px; }
-.pickup-date {
-  font-size: var(--text-11); font-weight: var(--fw-light);
-  color: var(--l3); letter-spacing: 0.06em;
+/* 日付：l3・11px・曜日色分け */
+.pickup-date { font-size: var(--text-13); font-weight: var(--fw-regular); color: var(--l2); }
+.pickup-date .sat { color: var(--sat); }
+.pickup-date .sun { color: var(--sun); }
+/* タイトル：l2・13px・lh-heading */
+.pickup-title {
+  font-size: var(--text-13);
+  font-weight: var(--fw-regular);
+  color: var(--l2);
+  line-height: var(--lh-heading);
 }
+/* アーティスト名：l1・15px・lh-list・1人1行 */
 .pickup-artists {
-  font-size: var(--text-15); font-weight: var(--fw-medium);
-  color: var(--l1); line-height: var(--lh-heading);
-}
-.pickup-sub {
-  font-size: var(--text-13); font-weight: var(--fw-light); color: var(--l3);
+  font-size: var(--text-17);
+  font-weight: var(--fw-medium);
+  color: var(--l1);
+  line-height: var(--lh-list);
 }
 
-/* SCHEDULE */
+/* ----------------------------------------
+   SCHEDULE
+   ---------------------------------------- */
 .ev-list { padding: 0 var(--page-pad); }
 .ev-row {
-  display: flex; align-items: stretch;
+  display: flex; align-items: center;
   border-bottom: 0.5px solid var(--border);
   text-decoration: none; color: inherit;
 }
 .ev-row:first-child { border-top: 0.5px solid var(--border); }
-
-.ev-thumb { width: 68px; flex-shrink: 0; background: var(--bg-sub); overflow: hidden; }
-.ev-thumb img { width: 100%; height: 100%; object-fit: cover; }
+/* サムネイル */
+.ev-thumb { width: 80px; height: 80px; flex-shrink: 0; background: var(--bg-sub); overflow: hidden; }
+.ev-thumb img { width: 100%; height: 100%; object-fit: contain; }
 .ev-thumb-ph {
-  width: 68px; flex-shrink: 0; background: var(--bg-sub);
+  width: 80px; height: 80px; flex-shrink: 0; background: var(--bg-sub);
   display: flex; align-items: center; justify-content: center;
-  font-size: var(--text-9); color: var(--l4); letter-spacing: 0.06em;
-  text-align: center; line-height: 1.4;
+  font-size: var(--text-9); color: var(--l4);
 }
-
 .ev-body {
-  flex: 1;
-  padding: var(--sp-12) 0 var(--sp-12) var(--sp-16);
-  display: flex; flex-direction: column;
-  justify-content: center; gap: 4px;
+  flex: 1; padding: var(--sp-12) 0 var(--sp-12) var(--sp-16);
+  display: flex; flex-direction: column; justify-content: center; gap: 3px;
 }
-.ev-date { display: flex; align-items: baseline; gap: 6px; }
-.ev-num {
-  font-size: var(--text-24); font-weight: var(--fw-medium);
-  color: var(--l1); line-height: 1;
-}
-.ev-dow { font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l3); }
-.ev-mon { font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l4); }
-.ev-title {
-  font-size: var(--text-15); font-weight: var(--fw-medium);
-  color: var(--l1); line-height: var(--lh-heading);
-}
-.ev-cast {
-  font-size: var(--text-13); font-weight: var(--fw-light);
-  color: var(--l3); line-height: var(--lh-list);
-}
-.ev-foot {
-  display: flex; gap: 6px; align-items: center;
-  font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l4);
-}
+/* 日付行 */
+.ev-date { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.ev-num { font-size: var(--text-24); font-weight: 600; color: var(--l1); line-height: 1; }
+/* 曜日：l2・色分け */
+.ev-dow { font-size: var(--text-13); font-weight: var(--fw-medium); color: var(--l2); }
+.ev-dow.sat { color: var(--sat); }
+.ev-dow.sun { color: var(--sun); }
+/* 月：l3 */
+.ev-mon { font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l3); }
+/* アーティスト名：l1・17px・lh-list・1人1行 */
+.ev-cast { font-size: var(--text-15); font-weight: var(--fw-medium); color: var(--l1); line-height: var(--lh-list); }
+/* タイトル：l3・13px・lh-heading */
+.ev-title { font-size: var(--text-13); font-weight: var(--fw-regular); color: var(--l3); line-height: var(--lh-heading); }
+/* 時間：l3・11px */
+.ev-time { font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l3); margin-top: 2px; }
 
-.list-foot {
-  padding: var(--sp-16) var(--page-pad) var(--sec-gap);
-  display: flex; flex-direction: column; gap: var(--sp-8);
-}
+.list-foot { padding: var(--sp-16) var(--page-pad) var(--sec-gap); }
 .more-btn {
   display: block; width: 100%; padding: 12px; text-align: center;
   border: 0.5px solid var(--border-mid); border-radius: var(--radius);
-  background: transparent; color: var(--l3);
-  font-size: var(--text-13); font-weight: var(--fw-light);
+  background: transparent; color: var(--l2);
+  font-size: var(--text-13); font-weight: var(--fw-regular);
   letter-spacing: 0.1em; font-family: var(--font); cursor: pointer;
 }
-.sync {
-  display: flex; align-items: center; gap: 6px;
-  font-size: var(--text-9); color: var(--l4); letter-spacing: 0.08em;
-}
-.sync-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: #4a9; animation: pulse 2.5s infinite;
-}
 
-/* NEWS */
+/* ----------------------------------------
+   NEWS
+   ---------------------------------------- */
 .news { padding: 0 var(--page-pad) var(--sec-gap); }
 .news-item {
-  display: flex; gap: var(--sp-16);
-  padding: var(--sp-12) 0;
+  display: flex; gap: var(--sp-16); padding: var(--sp-12) 0;
   border-bottom: 0.5px solid var(--border);
-  align-items: flex-start;
-  text-decoration: none; color: inherit;
+  align-items: flex-start; text-decoration: none; color: inherit;
 }
 .news-item:first-child { border-top: 0.5px solid var(--border); }
-.news-date {
-  font-size: var(--text-11); font-weight: var(--fw-light);
-  color: var(--l4); min-width: 44px; padding-top: 3px;
-  flex-shrink: 0; letter-spacing: 0.06em;
-}
-.news-cat {
-  font-size: var(--text-9); color: var(--accent);
-  letter-spacing: 0.12em; margin-bottom: 4px; opacity: 0.85;
-  text-transform: uppercase;
-}
-.news-title {
-  font-size: var(--text-15); font-weight: var(--fw-regular);
-  color: var(--l2); line-height: var(--lh-heading);
-}
+/* 日付：l3・13px */
+.news-date { font-size: var(--text-13); font-weight: var(--fw-light); color: var(--l3); min-width: 48px; flex-shrink: 0; }
+/* カテゴリ：accent・9px */
+.news-cat { font-size: var(--text-9); color: var(--accent); letter-spacing: 0.1em; margin-bottom: 3px; text-transform: uppercase; font-weight: var(--fw-medium); }
+/* タイトル：l1・15px・lh-heading */
+.news-title { font-size: var(--text-15); font-weight: var(--fw-regular); color: var(--l1); line-height: var(--lh-heading); }
 </style>
 </head>
 <body>
 
+<!-- ハンバーガーメニュー（全画面オーバーレイ） -->
+<div class="menu-overlay" id="menuOverlay">
+  <button class="menu-close" id="menuClose" aria-label="メニューを閉じる">✕</button>
+  <a href="schedule.html" onclick="closeMenu()">SCHEDULE</a>
+  <a href="rental.html" onclick="closeMenu()">RENTAL</a>
+  <a href="about.html" onclick="closeMenu()">ABOUT</a>
+  <a href="faq.html" onclick="closeMenu()">FAQ</a>
+  <a href="news.html" onclick="closeMenu()">NEWS</a>
+  <a href="contact.html" onclick="closeMenu()">CONTACT</a>
+</div>
+
+<!-- NAV -->
 <nav class="nav" role="navigation" aria-label="メインナビゲーション">
   <a href="/" class="nav-logo" aria-label="六本木SCHOOL トップページ">
     <img src="images/logo.png" alt="六本木SCHOOL LIVE BAR TOKYO">
   </a>
-  <button class="nav-hamburger" aria-label="メニューを開く">
+  <button class="nav-hamburger" id="menuOpen" aria-label="メニューを開く">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<section class="hero" aria-label="本日のイベント">
-  <div class="hero-bg">
-    <img src="" alt="" id="heroBgImg" aria-hidden="true">
-  </div>
-  <div class="hero-gradient"></div>
-  <div class="hero-body">
-    <div class="hero-eyebrow">
-      <div class="hero-dot"></div>
-      <span class="hero-label">Today's School</span>
-    </div>
-    <div class="hero-date" id="heroDate"></div>
-    <div class="hero-ev-title" id="heroTitle"></div>
-    <div class="hero-artists" id="heroArtists"></div>
-    <div class="hero-meta" id="heroMeta"></div>
-    <a class="hero-link" href="#" id="heroLink">詳細を見る →</a>
+<!-- TODAY'S SCHOOL -->
+<section aria-label="本日のイベント">
+  <div class="sh" style="padding:var(--sp-24) var(--page-pad) var(--sp-16)">TODAY'S SCHOOL<div class="sh-line"></div></div>
+  <div class="today-wrap">
+    <div class="today-title" id="todayTitle"></div>
+    <div class="today-artists" id="todayArtists"></div>
+    <div class="today-meta" id="todayMeta" style="display:none"></div>
   </div>
 </section>
 
-<section aria-label="ピックアップイベント">
-  <div class="sh">Pick Up<div class="sh-line"></div></div>
-  <div class="pickup-scroll" id="pickupList" role="list"></div>
+<!-- PICK UP -->
+<section aria-label="ピックアップイベント" id="pickupSection">
+  <div class="sh">PICK UP<div class="sh-line"></div></div>
+  <div class="pickup-scroll" id="pickupList"></div>
 </section>
 
+<!-- SCHEDULE -->
 <section aria-label="スケジュール">
-  <div class="sh">Schedule<div class="sh-line"></div></div>
-  <div class="ev-list" id="scheduleList" role="list"></div>
+  <div class="sh">SCHEDULE<div class="sh-line"></div></div>
+  <div class="ev-list" id="scheduleList"></div>
   <div class="list-foot">
     <button class="more-btn" id="moreBtn" onclick="showMore()" style="display:none">もっと見る</button>
-    <div class="sync"><div class="sync-dot"></div>Notionと連携 · 自動更新</div>
   </div>
 </section>
 
+<!-- NEWS -->
 <section aria-label="ニュース">
-  <div class="sh">News<div class="sh-line"></div></div>
+  <div class="sh">NEWS<div class="sh-line"></div></div>
   <div class="news">
     <a class="news-item" href="#">
       <div class="news-date">05.20</div>
@@ -342,6 +262,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-logo"><img src="images/logo.png" alt="六本木SCHOOL LIVE BAR TOKYO"></div>
   <address class="footer-addr">
@@ -357,27 +278,47 @@
     <a href="contact.html">CONTACT</a>
   </nav>
   <div class="footer-sns">
-    <a href="https://twitter.com/SCHOOLLIVEBAR" aria-label="X (Twitter)" rel="noopener" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    <a href="https://twitter.com/SCHOOLLIVEBAR" aria-label="X" rel="noopener" target="_blank">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     </a>
     <a href="https://www.instagram.com/schoollivebartokyo/" aria-label="Instagram" rel="noopener" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
     </a>
     <a href="#" aria-label="YouTube" rel="noopener" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
     </a>
     <a href="https://page.line.me/067inrki" aria-label="LINE" rel="noopener" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
     </a>
   </div>
   <p class="footer-copy">© 2026 六本木SCHOOL LIVE BAR TOKYO</p>
 </footer>
 
 <script>
+/* ----------------------------------------
+   ハンバーガーメニュー
+   ---------------------------------------- */
+var menuOverlay = document.getElementById('menuOverlay');
+document.getElementById('menuOpen').addEventListener('click', function() {
+  menuOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('menuClose').addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', function(e) {
+  if (e.target === menuOverlay) closeMenu();
+});
+function closeMenu() {
+  menuOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ----------------------------------------
+   イベントデータ
+   ---------------------------------------- */
 var EVENTS_URL = 'https://raw.githubusercontent.com/school-livebar-tokyo/schoolivebar.com/main/events.json';
 var SHOW_COUNT = 5;
 var ALL_EVENTS = [];
-var DAYS_EN = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+var DAYS_EN   = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 var MONTHS_EN = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 
 function parseDate(str) {
@@ -396,100 +337,147 @@ function getDowClass(d) {
 
 function sanitize(str) {
   if (!str) return '';
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+/* アーティスト名を1人1行のHTMLに変換（// または / 区切り） */
+function artistsToLines(str) {
+  if (!str) return '';
+  var sep = str.indexOf('//') !== -1 ? '//' : '/';
+  return str.split(sep).map(function(a) {
+    return sanitize(a.trim());
+  }).filter(function(a) { return a; }).join('<br>');
+}
+
+/* ----------------------------------------
+   TODAY'S SCHOOL
+   ---------------------------------------- */
 function renderToday(events) {
-  var today = new Date(); today.setHours(0,0,0,0);
+  var today = new Date();
+  today.setHours(0,0,0,0);
   var ev = null;
-  for (var i=0; i<events.length; i++) {
+  for (var i = 0; i < events.length; i++) {
     var d = parseDate(events[i].date);
     if (!d) continue;
     d.setHours(0,0,0,0);
     if (d.getTime() === today.getTime()) { ev = events[i]; break; }
   }
+
   if (!ev) {
-    document.getElementById('heroArtists').innerHTML =
-      '<span style="font-size:var(--text-15);color:var(--l3);font-weight:var(--fw-light)">本日の営業はありません</span>';
-    document.getElementById('heroMeta').style.display = 'none';
-    document.getElementById('heroLink').style.display = 'none';
+    document.getElementById('todayArtists').innerHTML =
+      '<span style="font-size:var(--text-15);color:var(--l3);font-weight:300">本日の営業はありません</span>';
     return;
   }
-  var d = parseDate(ev.date);
-  if (ev.flyer_url) { document.getElementById('heroBgImg').src = ev.flyer_url; }
-  document.getElementById('heroDate').textContent =
-    (d.getMonth()+1) + '.' + d.getDate() + '  ' + DAYS_EN[d.getDay()];
-  document.getElementById('heroTitle').textContent = ev.title || '';
-  var artists = (ev.artists || '').split('//').map(function(a){ return sanitize(a.trim()); });
-  document.getElementById('heroArtists').innerHTML = artists.join('<br>');
+
+  /* アーティスト名：l1・1人1行 */
+  document.getElementById('todayArtists').innerHTML = artistsToLines(ev.artists);
+
+  /* タイトル：l2 */
+  document.getElementById('todayTitle').textContent = ev.title || '';
+
+  /* Open/Start + Door：一行 */
   var meta = '';
-  if (ev.open_start) meta += '<div class="hero-meta-item"><div class="hero-meta-label">Open / Start</div><div class="hero-meta-val">'+sanitize(ev.open_start)+'</div></div>';
-  if (ev.ticket_price) meta += '<div class="hero-meta-item"><div class="hero-meta-label">Adv / Door</div><div class="hero-meta-val">'+sanitize(ev.ticket_price)+'</div></div>';
-  document.getElementById('heroMeta').innerHTML = meta;
-  document.getElementById('heroLink').href = 'event.html?id=' + sanitize(ev.id || '');
+  var openStart = ev.open_start || ev.time || '';
+  var ticketPrice = ev.ticket_price || ev.price || '';
+  if (openStart) {
+    meta += '<span class="today-meta-label">Open / Start</span>'
+          + '<span class="today-meta-val">' + sanitize(openStart) + '</span>';
+  }
+  if (ticketPrice) {
+    if (openStart) meta += '<span class="today-meta-sep">·</span>';
+    meta += '<span class="today-meta-label">Door</span>'
+          + '<span class="today-meta-val">' + sanitize(ticketPrice) + '</span>';
+  }
+  if (meta) {
+    var el = document.getElementById('todayMeta');
+    el.innerHTML = meta;
+    el.style.display = 'flex';
+  }
 }
 
+/* ----------------------------------------
+   PICK UP（日付→タイトル→アーティスト名）
+   ---------------------------------------- */
 function renderPickup(events) {
-  var today = new Date(); today.setHours(0,0,0,0);
+  var today = new Date();
+  today.setHours(0,0,0,0);
   var pickups = events.filter(function(e) {
-    var d = parseDate(e.date); if (!d) return false;
+    var d = parseDate(e.date);
+    if (!d) return false;
     d.setHours(0,0,0,0);
     return e.pickup && d >= today;
   });
-  var container = document.getElementById('pickupList');
-  if (!pickups.length) { container.closest('section').style.display='none'; return; }
+
+  if (!pickups.length) {
+    document.getElementById('pickupSection').style.display = 'none';
+    return;
+  }
+
   var html = '';
   pickups.forEach(function(e) {
     var d = parseDate(e.date);
     var dowClass = getDowClass(d);
-    var dateStr = (d.getMonth()+1)+'.'+('0'+d.getDate()).slice(-2)+' <span class="'+dowClass+'">'+DAYS_EN[d.getDay()]+'</span>';
-    var artists = (e.artists||'').split('//').map(function(a){ return sanitize(a.trim()); }).join(' / ');
-    var img = e.flyer_url
-      ? '<img src="'+sanitize(e.flyer_url)+'" alt="'+sanitize(e.title)+'" loading="lazy">'
-      : '<div class="pickup-flyer-ph">PHOTO</div>';
-    html += '<a class="pickup-card" href="event.html?id='+sanitize(e.id||'')+'" role="listitem">'+
-      '<div class="pickup-flyer">'+img+'</div>'+
-      '<div class="pickup-info">'+
-        '<div class="pickup-date">'+dateStr+'</div>'+
-        '<div class="pickup-artists">'+artists+'</div>'+
-        (e.title ? '<div class="pickup-sub">'+sanitize(e.title)+'</div>' : '')+
-      '</div></a>';
+    var dateStr = (d.getMonth()+1) + '.' + ('0'+d.getDate()).slice(-2)
+      + ' <span class="' + dowClass + '">' + DAYS_EN[d.getDay()] + '</span>';
+    var flyerUrl = e.flyer_url || (e.images && e.images[0]) || '';
+    var img = flyerUrl
+      ? '<img src="' + sanitize(flyerUrl) + '" alt="' + sanitize(e.title) + '" loading="lazy">'
+      : '<div class="pickup-flyer-ph">—</div>';
+
+    html += '<a class="pickup-card" href="event.html?id=' + sanitize(e.id||'') + '">'
+      + '<div class="pickup-flyer">' + img + '</div>'
+      + '<div class="pickup-info">'
+        + '<div class="pickup-date">' + dateStr + '</div>'
+        + (e.title ? '<div class="pickup-title">' + sanitize(e.title) + '</div>' : '')
+        + (e.artists ? '<div class="pickup-artists">' + artistsToLines(e.artists) + '</div>' : '')
+      + '</div>'
+      + '</a>';
   });
-  container.innerHTML = html;
+  document.getElementById('pickupList').innerHTML = html;
 }
 
+/* ----------------------------------------
+   SCHEDULE（日付→アーティスト名→タイトル→時間）
+   ---------------------------------------- */
 function renderSchedule() {
-  var today = new Date(); today.setHours(0,0,0,0);
+  var today = new Date();
+  today.setHours(0,0,0,0);
   var future = ALL_EVENTS.filter(function(e) {
-    var d = parseDate(e.date); if (!d) return false;
-    d.setHours(0,0,0,0); return d >= today;
+    var d = parseDate(e.date);
+    if (!d) return false;
+    d.setHours(0,0,0,0);
+    return d >= today;
   });
+
   var shown = future.slice(0, SHOW_COUNT);
   var html = '';
   shown.forEach(function(e) {
     var d = parseDate(e.date);
     var dowClass = getDowClass(d);
-    var artists = (e.artists||'').split('//').map(function(a){ return sanitize(a.trim()); }).join(' / ');
-    var thumb = e.flyer_url
-      ? '<div class="ev-thumb"><img src="'+sanitize(e.flyer_url)+'" alt="" loading="lazy"></div>'
-      : '<div class="ev-thumb-ph">NO<br>IMG</div>';
-    html += '<a class="ev-row" href="event.html?id='+sanitize(e.id||'')+'" role="listitem">'+
-      thumb+
-      '<div class="ev-body">'+
-        '<div class="ev-date">'+
-          '<div class="ev-num">'+('0'+d.getDate()).slice(-2)+'</div>'+
-          '<div class="ev-dow '+dowClass+'">'+DAYS_EN[d.getDay()]+'</div>'+
-          '<div class="ev-mon">'+MONTHS_EN[d.getMonth()]+'</div>'+
-        '</div>'+
-        '<div class="ev-title">'+sanitize(e.title)+'</div>'+
-        (artists ? '<div class="ev-cast">'+artists+'</div>' : '')+
-        '<div class="ev-foot">'+
-          (e.open_start ? '<span>'+sanitize(e.open_start)+'</span>' : '')+
-          '<span class="tag">LIVE</span>'+
-        '</div>'+
-      '</div></a>';
+    var thumbUrl = e.flyer_url || (e.images && e.images[0]) || '';
+    var thumb = thumbUrl
+      ? '<div class="ev-thumb"><img src="' + sanitize(thumbUrl) + '" alt="" loading="lazy"></div>'
+      : '<div class="ev-thumb-ph">—</div>';
+
+    html += '<a class="ev-row" href="event.html?id=' + sanitize(e.id||'') + '">'
+      + thumb
+      + '<div class="ev-body">'
+        + '<div class="ev-date">'
+          + '<div class="ev-num">' + ('0'+d.getDate()).slice(-2) + '</div>'
+          + '<div class="ev-dow ' + dowClass + '">' + DAYS_EN[d.getDay()] + '</div>'
+          + '<div class="ev-mon">' + MONTHS_EN[d.getMonth()] + '</div>'
+        + '</div>'
+        + (e.artists ? '<div class="ev-cast">' + artistsToLines(e.artists) + '</div>' : '')
+        + (e.title ? '<div class="ev-title">' + sanitize(e.title) + '</div>' : '')
+        + ((e.open_start || e.time) ? '<div class="ev-time">' + sanitize(e.open_start || e.time) + '</div>' : '')
+      + '</div>'
+      + '</a>';
   });
+
   document.getElementById('scheduleList').innerHTML = html;
+
   var btn = document.getElementById('moreBtn');
   if (future.length > SHOW_COUNT) {
     btn.style.display = 'block';
@@ -502,15 +490,15 @@ function renderSchedule() {
 function showMore() { SHOW_COUNT += 5; renderSchedule(); }
 
 fetch(EVENTS_URL)
-  .then(function(r){ return r.json(); })
-  .then(function(data){
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
     ALL_EVENTS = data;
     renderToday(data);
     renderPickup(data);
     renderSchedule();
   })
-  .catch(function(){
-    document.getElementById('heroArtists').innerHTML =
+  .catch(function() {
+    document.getElementById('todayArtists').innerHTML =
       '<span style="font-size:var(--text-13);color:var(--l4)">読み込み中...</span>';
   });
 </script>
