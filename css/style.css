@@ -144,7 +144,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .menu-overlay a:hover { color: var(--l1); }
 .menu-close {
   position: absolute; top: 20px; right: 20px;
-  font-size: var(--text-24); color: var(--l3);
+  font-size: var(--text-24); color: rgba(255,255,255,0.75);
   cursor: pointer; padding: 8px;
   background: none; border: none;
   font-family: var(--font);
