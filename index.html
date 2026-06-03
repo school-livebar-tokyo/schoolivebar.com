@@ -3,209 +3,387 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>六本木SCHOOL LIVE BAR TOKYO</title>
+
+<!-- SEO -->
+<title>六本木SCHOOL LIVE BAR TOKYO — ライブ・DJ・イベント対応の多目的スペース</title>
+<meta name="description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・配信に対応した六本木の多目的ライブスペース。港区六本木5-16-5 インペリアル六本木B1。">
+<meta name="keywords" content="六本木SCHOOL,ライブハウス,六本木,ライブバー,DJ,イベント,ライブ,東京,roppongi">
+<link rel="canonical" href="https://schoolivebar.com/">
+
+<!-- OGP -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://schoolivebar.com/">
+<meta property="og:title" content="六本木SCHOOL LIVE BAR TOKYO">
+<meta property="og:description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・配信に対応した六本木の多目的ライブスペース。">
+<meta property="og:image" content="https://schoolivebar.com/images/ogp.jpg">
+<meta property="og:site_name" content="六本木SCHOOL LIVE BAR TOKYO">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SCHOOLLIVEBAR">
+<meta name="twitter:title" content="六本木SCHOOL LIVE BAR TOKYO">
+<meta name="twitter:description" content="六本木SCHOOLは、ライブ・DJ・トークイベント・配信に対応した六本木の多目的ライブスペース。">
+<meta name="twitter:image" content="https://schoolivebar.com/images/ogp.jpg">
+
+<!-- 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicVenue",
+  "name": "六本木SCHOOL LIVE BAR TOKYO",
+  "url": "https://schoolivebar.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "六本木5-16-5 インペリアル六本木B1",
+    "addressLocality": "港区",
+    "addressRegion": "東京都",
+    "postalCode": "106-0032",
+    "addressCountry": "JP"
+  },
+  "telephone": "03-5545-5758",
+  "sameAs": [
+    "https://twitter.com/SCHOOLLIVEBAR",
+    "https://www.instagram.com/schoollivebartokyo/"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
 <style>
-/* index.html 固有スタイル */
-.sh-center{justify-content:center}
-.today{padding:0 var(--page-pad) var(--sec-gap)}
-.today-title{font-size:var(--text-11);color:var(--l2);font-weight:var(--fw-light);margin-bottom:var(--group-gap)}
-.today-artists{font-size:var(--text-17);font-weight:var(--fw-medium);line-height:var(--lh-list);margin-bottom:var(--group-gap)}
-.info-rows{border-top:0.5px solid var(--border);margin-bottom:var(--group-gap)}
-.info-row{display:flex;gap:var(--group-gap);padding:var(--item-gap) 0;border-bottom:0.5px solid var(--border);align-items:baseline}
-.info-label{font-size:var(--text-11);color:var(--l3);min-width:88px;font-weight:var(--fw-light);letter-spacing:0.04em;flex-shrink:0}
-.info-val{font-size:var(--text-11);color:var(--l1)}
-.more-link{display:inline-block;font-size:var(--text-11);color:var(--l2);letter-spacing:0.08em;border-bottom:0.5px solid var(--border-mid);padding-bottom:2px;margin-top:var(--group-gap)}
+/* ============================================
+   index.html 固有スタイル
+   ============================================ */
 
-.pickup{padding:0 var(--page-pad) var(--sec-gap);display:flex;flex-direction:column;gap:10px}
-.pickup-card{display:flex;border:0.5px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer}
-.pickup-thumb{width:110px;flex-shrink:0}
-.pickup-thumb img{width:100%;height:100%;object-fit:cover}
-.pickup-body{flex:1;padding:var(--group-gap);display:flex;flex-direction:column;gap:var(--item-gap)}
-.pickup-date{font-size:var(--text-13);font-weight:var(--fw-medium)}
-.pickup-artists{font-size:var(--text-13);font-weight:var(--fw-medium);line-height:var(--lh-list)}
-.pickup-sub{font-size:var(--text-11);color:var(--l2);font-weight:var(--fw-light)}
-.pickup-foot{display:flex;gap:6px;align-items:center;font-size:var(--text-11);color:var(--l3)}
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--page-pad);
+  background: rgba(12,12,12,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 0.5px solid var(--border);
+}
+.nav-logo img { height: 52px; mix-blend-mode: screen; }
+.nav-hb { display:flex; flex-direction:column; gap:5px; padding:4px; background:none; border:none; cursor:pointer; }
+.nav-hb span { display:block; width:22px; height:0.5px; background:var(--l1); }
 
-.ev-list{padding:0 var(--page-pad)}
-.ev-row{display:flex;border-bottom:0.5px solid var(--border);cursor:pointer}
-.ev-row:first-child{border-top:0.5px solid var(--border)}
-.ev-thumb{width:72px;flex-shrink:0;background:var(--bg-sub)}
-.ev-thumb img{width:100%;height:100%;object-fit:cover}
-.ev-thumb-ph{width:72px;flex-shrink:0;background:var(--bg-sub);display:flex;align-items:center;justify-content:center;font-size:var(--text-9);color:var(--l4)}
-.ev-body{flex:1;padding:var(--item-gap) 0 var(--item-gap) var(--group-gap)}
-.ev-date{display:flex;align-items:baseline;gap:5px;margin-bottom:var(--item-gap)}
-.ev-num{font-size:var(--text-22);font-weight:var(--fw-medium);line-height:1}
-.ev-dow{font-size:var(--text-11);color:var(--l2)}
-.ev-mon{font-size:var(--text-11);color:var(--l3)}
-.ev-title{font-size:var(--text-13);font-weight:var(--fw-medium);line-height:var(--lh-heading);margin-bottom:3px}
-.ev-cast{font-size:var(--text-11);color:var(--l2);line-height:var(--lh-list);margin-bottom:var(--item-gap)}
-.ev-foot{display:flex;gap:6px;align-items:center;font-size:var(--text-11);color:var(--l3)}
-.tag{font-size:var(--text-9);padding:1px 6px;border-radius:1px;border:0.5px solid rgba(106,159,216,0.3);color:var(--sat);letter-spacing:0.06em}
-.sat{color:var(--sat)}
-.sun{color:var(--sun)}
-.more-btn{display:block;width:100%;padding:10px;text-align:center;border:0.5px solid var(--border-mid);border-radius:var(--radius);background:transparent;color:var(--l2);font-size:var(--text-11);letter-spacing:0.08em;font-family:var(--font)}
-.sync{display:flex;align-items:center;gap:6px;font-size:var(--text-9);color:var(--l4);padding:10px 0}
-.sync-dot{width:5px;height:5px;border-radius:50%;background:#4a9;animation:pulse 2.5s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.2}}
+/* HERO */
+.hero { position:relative; overflow:hidden; min-height:56vw; display:flex; align-items:flex-end; }
+.hero-bg { position:absolute; inset:0; background:var(--bg-sub); }
+.hero-bg img { width:100%; height:100%; object-fit:cover; opacity:0.35; filter:blur(2px); transform:scale(1.04); }
+.hero-gradient { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(12,12,12,0) 0%, rgba(12,12,12,0.55) 45%, rgba(12,12,12,0.97) 100%); }
+.hero-body { position:relative; z-index:2; width:100%; padding:var(--sp-32) var(--page-pad) var(--sp-24); }
+.hero-eyebrow { display:flex; align-items:center; gap:8px; margin-bottom:var(--sp-8); }
+.hero-dot { width:5px; height:5px; border-radius:50%; background:var(--accent); animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero-label { font-size:var(--text-9); font-weight:var(--fw-light); letter-spacing:0.2em; color:var(--accent); text-transform:uppercase; }
+.hero-date { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); letter-spacing:0.08em; margin-bottom:4px; }
+.hero-ev-title { font-size:var(--text-13); font-weight:var(--fw-light); color:var(--l2); margin-bottom:var(--sp-8); letter-spacing:0.04em; }
+.hero-artists { font-size:var(--text-17); font-weight:var(--fw-medium); color:var(--l1); line-height:var(--lh-list); margin-bottom:var(--sp-16); }
+.hero-meta { display:flex; gap:var(--sp-16); margin-bottom:var(--sp-16); padding-top:var(--sp-8); border-top:0.5px solid var(--border); }
+.hero-meta-item { display:flex; flex-direction:column; gap:3px; }
+.hero-meta-label { font-size:var(--text-9); font-weight:var(--fw-light); color:var(--l4); letter-spacing:0.12em; text-transform:uppercase; }
+.hero-meta-val { font-size:var(--text-11); color:var(--l2); }
+.hero-link { display:inline-flex; align-items:center; gap:6px; font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l2); letter-spacing:0.08em; border-bottom:0.5px solid var(--border-mid); padding-bottom:2px; }
 
-.news{padding:0 var(--page-pad) var(--sec-gap)}
-.news-item{display:flex;gap:var(--group-gap);padding:var(--item-gap) 0;border-bottom:0.5px solid var(--border);align-items:flex-start}
-.news-item:first-child{border-top:0.5px solid var(--border)}
-.news-item:last-child{border-bottom:none}
-.news-date{font-size:var(--text-11);color:var(--l3);min-width:52px;font-weight:var(--fw-light);padding-top:2px}
-.news-cat{font-size:var(--text-9);color:var(--accent);letter-spacing:0.08em;margin-bottom:3px;opacity:0.8}
-.news-title{font-size:var(--text-13);line-height:var(--lh-heading)}
+/* SECTION HEADER */
+.sh { display:flex; align-items:center; gap:10px; padding:var(--sp-32) var(--page-pad) var(--sp-16); font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); letter-spacing:0.2em; text-transform:uppercase; }
+.sh-line { flex:1; height:0.5px; background:var(--border); }
 
-.footer{padding:var(--sec-gap) var(--page-pad);border-top:0.5px solid var(--border)}
-.footer-logo img{height:52px;mix-blend-mode:screen;margin-bottom:var(--group-gap)}
-.footer-addr{font-size:var(--text-11);color:var(--l2);line-height:var(--lh-body);margin-bottom:var(--group-gap);font-weight:var(--fw-light)}
-.footer-nav{display:flex;flex-wrap:wrap;gap:var(--group-gap);margin-bottom:var(--group-gap)}
-.footer-nav a{font-size:var(--text-11);color:var(--l3);letter-spacing:0.08em}
-.footer-sns{display:flex;gap:var(--group-gap);margin-bottom:var(--group-gap)}
-.footer-sns a{color:var(--l3);display:flex}
-.footer-copy{font-size:var(--text-9);color:var(--l4);letter-spacing:0.06em}
+/* PICKUP 横スクロール */
+.pickup-scroll { display:flex; gap:10px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; padding:0 var(--page-pad) var(--sp-32); }
+.pickup-scroll::-webkit-scrollbar { display:none; }
+.pickup-card { flex-shrink:0; width:140px; display:flex; flex-direction:column; gap:8px; cursor:pointer; text-decoration:none; color:inherit; }
+.pickup-flyer { width:140px; aspect-ratio:4/5; border-radius:2px; overflow:hidden; background:var(--bg-sub); }
+.pickup-flyer img { width:100%; height:100%; object-fit:cover; }
+.pickup-flyer-ph { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:var(--text-9); color:var(--l4); letter-spacing:0.1em; }
+.pickup-info { display:flex; flex-direction:column; gap:3px; }
+.pickup-date { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); }
+.pickup-artists { font-size:var(--text-13); font-weight:var(--fw-medium); color:var(--l1); line-height:var(--lh-heading); }
+.pickup-sub { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); }
+
+/* SCHEDULE */
+.ev-list { padding:0 var(--page-pad); }
+.ev-row { display:flex; align-items:stretch; border-bottom:0.5px solid var(--border); cursor:pointer; text-decoration:none; color:inherit; }
+.ev-row:first-child { border-top:0.5px solid var(--border); }
+.ev-thumb { width:64px; flex-shrink:0; background:var(--bg-sub); overflow:hidden; }
+.ev-thumb img { width:100%; height:100%; object-fit:cover; }
+.ev-thumb-ph { width:64px; flex-shrink:0; background:var(--bg-sub); display:flex; align-items:center; justify-content:center; font-size:var(--text-9); color:var(--l4); letter-spacing:0.06em; }
+.ev-body { flex:1; padding:var(--sp-8) 0 var(--sp-8) var(--sp-16); display:flex; flex-direction:column; justify-content:center; gap:3px; }
+.ev-date { display:flex; align-items:baseline; gap:5px; }
+.ev-num { font-size:var(--text-22); font-weight:var(--fw-medium); color:var(--l1); line-height:1; }
+.ev-dow { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); }
+.ev-mon { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l4); }
+.ev-title { font-size:var(--text-13); font-weight:var(--fw-medium); color:var(--l1); line-height:var(--lh-heading); }
+.ev-cast { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); line-height:var(--lh-list); }
+.ev-foot { display:flex; gap:6px; align-items:center; font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l4); }
+.tag { font-size:var(--text-9); padding:1px 6px; border-radius:1px; border:0.5px solid rgba(106,159,216,0.3); color:var(--sat); letter-spacing:0.06em; }
+.sat { color:var(--sat); }
+.sun { color:var(--sun); }
+
+.list-foot { padding:var(--sp-16) var(--page-pad) var(--sp-32); display:flex; flex-direction:column; gap:var(--sp-8); }
+.more-btn { display:block; width:100%; padding:10px; text-align:center; border:0.5px solid var(--border-mid); border-radius:var(--radius); background:transparent; color:var(--l3); font-size:var(--text-11); font-weight:var(--fw-light); letter-spacing:0.1em; font-family:var(--font); cursor:pointer; }
+.sync { display:flex; align-items:center; gap:6px; font-size:var(--text-9); color:var(--l4); letter-spacing:0.06em; }
+.sync-dot { width:4px; height:4px; border-radius:50%; background:#4a9; animation:pulse 2.5s infinite; }
+
+/* NEWS */
+.news { padding:0 var(--page-pad) var(--sp-32); }
+.news-item { display:flex; gap:var(--sp-16); padding:var(--sp-8) 0; border-bottom:0.5px solid var(--border); align-items:flex-start; text-decoration:none; color:inherit; }
+.news-item:first-child { border-top:0.5px solid var(--border); }
+.news-date { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l4); min-width:44px; padding-top:2px; flex-shrink:0; letter-spacing:0.04em; }
+.news-cat { font-size:var(--text-9); color:var(--accent); letter-spacing:0.1em; margin-bottom:3px; opacity:0.8; }
+.news-title { font-size:var(--text-13); font-weight:var(--fw-regular); color:var(--l2); line-height:var(--lh-heading); }
+
+/* FOOTER */
+.footer { padding:var(--sp-32) var(--page-pad) var(--sp-48); border-top:0.5px solid var(--border); }
+.footer-logo img { height:44px; mix-blend-mode:screen; margin-bottom:var(--sp-16); }
+.footer-addr { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l3); line-height:var(--lh-body); margin-bottom:var(--sp-16); font-style:normal; }
+.footer-nav { display:flex; flex-wrap:wrap; gap:var(--sp-16); margin-bottom:var(--sp-16); }
+.footer-nav a { font-size:var(--text-11); font-weight:var(--fw-light); color:var(--l4); letter-spacing:0.1em; text-decoration:none; }
+.footer-sns { display:flex; gap:var(--sp-16); margin-bottom:var(--sp-16); }
+.footer-sns a { color:var(--l3); display:flex; }
+.footer-copy { font-size:var(--text-9); font-weight:var(--fw-light); color:var(--l4); letter-spacing:0.08em; }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">
-    <img src="images/logo.png" alt="六本木SCHOOL">
-  </div>
-  <button class="nav-hb" aria-label="メニュー">
+<nav class="nav" role="navigation" aria-label="メインナビゲーション">
+  <a href="/" class="nav-logo" aria-label="六本木SCHOOL トップページ">
+    <img src="images/logo.png" alt="六本木SCHOOL LIVE BAR TOKYO">
+  </a>
+  <button class="nav-hb" aria-label="メニューを開く">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="sh sh-center">本日 5/29(THU) のイベント</div>
-<div class="today">
-  <div class="today-title">ROPPONGI SOUNDSCAPE vol.13</div>
-  <div class="today-artists">夏野菜ゆみ<br>どっちつかズ<br>New Love New Light</div>
-  <div class="info-rows">
-    <div class="info-row">
-      <span class="info-label">OPEN / START</span>
-      <span class="info-val">19:00 / 19:30</span>
-    </div>
-    <div class="info-row">
-      <span class="info-label">ADV / DOOR</span>
-      <span class="info-val">¥2,400 / ¥2,900 (+1D)</span>
-    </div>
+<section class="hero" aria-label="本日のイベント">
+  <div class="hero-bg">
+    <img src="" alt="" id="heroBgImg" aria-hidden="true">
   </div>
-  <a class="more-link" href="event.html?id=20260428">詳細を見る →</a>
-</div>
+  <div class="hero-gradient"></div>
+  <div class="hero-body">
+    <div class="hero-eyebrow">
+      <div class="hero-dot"></div>
+      <span class="hero-label">Today's School</span>
+    </div>
+    <div class="hero-date" id="heroDate"></div>
+    <div class="hero-ev-title" id="heroTitle"></div>
+    <div class="hero-artists" id="heroArtists"></div>
+    <div class="hero-meta" id="heroMeta"></div>
+    <a class="hero-link" href="#" id="heroLink">詳細を見る →</a>
+  </div>
+</section>
 
-<div class="sh">PICK UP<div class="sh-line"></div></div>
-<div class="pickup">
-  <a class="pickup-card" href="event.html?id=20260530">
-    <div class="pickup-thumb">
-      <img src="https://res.cloudinary.com/dydcdigj4/image/upload/20260428_png" alt="">
-    </div>
-    <div class="pickup-body">
-      <div class="pickup-date">05.30 <span class="sat">SAT</span></div>
-      <div class="pickup-artists">空気公団solo / guest 笹原 清明</div>
-      <div class="pickup-sub">空気公団solo 〜 UTAUTABI 〜</div>
-      <div class="pickup-foot"><span>17:00 / 17:30</span><span class="tag">LIVE</span></div>
-    </div>
-  </a>
-  <a class="pickup-card" href="event.html?id=20260606">
-    <div class="pickup-thumb">
-      <img src="https://res.cloudinary.com/dydcdigj4/image/upload/3_10" alt="">
-    </div>
-    <div class="pickup-body">
-      <div class="pickup-date">06.06 <span class="sat">SAT</span></div>
-      <div class="pickup-artists">コダマカプセル / FROITO / La muzzle / どっちつかズ</div>
-      <div class="pickup-sub">光化学の世界 vol.2</div>
-      <div class="pickup-foot"><span>17:00 / 17:30</span><span class="tag">LIVE</span></div>
-    </div>
-  </a>
-</div>
+<section aria-label="ピックアップイベント">
+  <div class="sh">Pick Up<div class="sh-line"></div></div>
+  <div class="pickup-scroll" id="pickupList" role="list"></div>
+</section>
 
-<div class="sh">SCHEDULE<div class="sh-line"></div></div>
-<div class="ev-list">
-  <a class="ev-row" href="event.html?id=20260607">
-    <div class="ev-thumb">
-      <img src="https://res.cloudinary.com/dydcdigj4/image/upload/3_10" alt="">
-    </div>
-    <div class="ev-body">
-      <div class="ev-date">
-        <div class="ev-num">07</div>
-        <div class="ev-dow sat">SAT</div>
-        <div class="ev-mon">JUN</div>
-      </div>
-      <div class="ev-title">浜浦彩乃 Birthday Live</div>
-      <div class="ev-cast">vo.浜浦彩乃 / gt.滝沢ジョー / Key.biki</div>
-      <div class="ev-foot"><span>12:40 / 13:10</span><span class="tag">LIVE</span></div>
-    </div>
-  </a>
-  <a class="ev-row" href="event.html?id=20260610">
-    <div class="ev-thumb-ph">PHOTO</div>
-    <div class="ev-body">
-      <div class="ev-date">
-        <div class="ev-num">10</div>
-        <div class="ev-dow">WED</div>
-        <div class="ev-mon">JUN</div>
-      </div>
-      <div class="ev-title">ROPPONGI EXTENSION vol.1</div>
-      <div class="ev-cast">ヤジマX / ハシグチカナデリヤ / さかいかの</div>
-      <div class="ev-foot"><span>18:30 / 19:00</span><span class="tag">LIVE</span></div>
-    </div>
-  </a>
-  <a class="ev-row" href="event.html?id=20260625">
-    <div class="ev-thumb-ph">PHOTO</div>
-    <div class="ev-body">
-      <div class="ev-date">
-        <div class="ev-num">25</div>
-        <div class="ev-dow sat">SAT</div>
-        <div class="ev-mon">JUN</div>
-      </div>
-      <div class="ev-title">Roppongi Soundscape vol.14</div>
-      <div class="ev-cast">志摩陽立 / 水泳 / cambelle / ぼんち</div>
-      <div class="ev-foot"><span class="tag">LIVE</span></div>
-    </div>
-  </a>
-</div>
-<div style="padding:0 var(--page-pad) var(--sec-gap)">
-  <button class="more-btn" onclick="location.href='schedule.html'">もっと見る →</button>
-  <div class="sync"><div class="sync-dot"></div>Notionと連携 · 自動更新</div>
-</div>
+<section aria-label="スケジュール">
+  <div class="sh">Schedule<div class="sh-line"></div></div>
+  <div class="ev-list" id="scheduleList" role="list"></div>
+  <div class="list-foot">
+    <button class="more-btn" id="moreBtn" onclick="showMore()" style="display:none">もっと見る</button>
+    <div class="sync"><div class="sync-dot"></div>Notionと連携 · 自動更新</div>
+  </div>
+</section>
 
-<div class="sh">NEWS<div class="sh-line"></div></div>
-<div class="news">
-  <a class="news-item" href="#">
-    <div class="news-date">05.20</div>
-    <div><div class="news-cat">お知らせ</div><div class="news-title">6月のスケジュールを更新しました</div></div>
-  </a>
-  <a class="news-item" href="#">
-    <div class="news-date">05.10</div>
-    <div><div class="news-cat">スタッフ募集</div><div class="news-title">アルバイトスタッフを募集しています</div></div>
-  </a>
-  <a class="news-item" href="#">
-    <div class="news-date">04.28</div>
-    <div><div class="news-cat">お知らせ</div><div class="news-title">GW期間中の営業について</div></div>
-  </a>
-</div>
+<section aria-label="ニュース">
+  <div class="sh">News<div class="sh-line"></div></div>
+  <div class="news">
+    <a class="news-item" href="#">
+      <div class="news-date">05.20</div>
+      <div><div class="news-cat">お知らせ</div><div class="news-title">6月のスケジュールを更新しました</div></div>
+    </a>
+    <a class="news-item" href="#">
+      <div class="news-date">05.10</div>
+      <div><div class="news-cat">スタッフ募集</div><div class="news-title">アルバイトスタッフを募集しています</div></div>
+    </a>
+    <a class="news-item" href="#">
+      <div class="news-date">04.28</div>
+      <div><div class="news-cat">お知らせ</div><div class="news-title">GW期間中の営業について</div></div>
+    </a>
+  </div>
+</section>
 
 <footer class="footer">
-  <div class="footer-logo"><img src="images/logo.png" alt="六本木SCHOOL"></div>
-  <div class="footer-addr">港区六本木5-16-5 インペリアル六本木B1<br>東京メトロ日比谷線「六本木」徒歩3分</div>
-  <div class="footer-nav">
+  <div class="footer-logo"><img src="images/logo.png" alt="六本木SCHOOL LIVE BAR TOKYO"></div>
+  <address class="footer-addr">
+    港区六本木5-16-5 インペリアル六本木B1<br>
+    東京メトロ日比谷線「六本木」徒歩3分
+  </address>
+  <nav class="footer-nav" aria-label="フッターナビゲーション">
     <a href="schedule.html">SCHEDULE</a>
     <a href="rental.html">RENTAL</a>
     <a href="about.html">ABOUT</a>
     <a href="faq.html">FAQ</a>
     <a href="news.html">NEWS</a>
     <a href="contact.html">CONTACT</a>
-  </div>
+  </nav>
   <div class="footer-sns">
-    <a href="#" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-    <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
-    <a href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-    <a href="#" aria-label="LINE"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+    <a href="https://twitter.com/SCHOOLLIVEBAR" aria-label="X (Twitter)" rel="noopener" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/schoollivebartokyo/" aria-label="Instagram" rel="noopener" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="#" aria-label="YouTube" rel="noopener" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+    <a href="https://page.line.me/067inrki" aria-label="LINE" rel="noopener" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
   </div>
-  <div class="footer-copy">© 2026 六本木SCHOOL LIVE BAR TOKYO</div>
+  <p class="footer-copy">© 2026 六本木SCHOOL LIVE BAR TOKYO</p>
 </footer>
 
+<script>
+var EVENTS_URL = 'https://raw.githubusercontent.com/school-livebar-tokyo/schoolivebar.com/main/events.json';
+var SHOW_COUNT = 5;
+var ALL_EVENTS = [];
+var DAYS_EN = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+var MONTHS_EN = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+function parseDate(str) {
+  if (!str) return null;
+  var m = str.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return null;
+  return new Date(+m[1], +m[2]-1, +m[3]);
+}
+
+function getDowClass(d) {
+  var day = d.getDay();
+  if (day === 6) return 'sat';
+  if (day === 0) return 'sun';
+  return '';
+}
+
+function sanitize(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderToday(events) {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var ev = null;
+  for (var i=0; i<events.length; i++) {
+    var d = parseDate(events[i].date);
+    if (!d) continue;
+    d.setHours(0,0,0,0);
+    if (d.getTime() === today.getTime()) { ev = events[i]; break; }
+  }
+  if (!ev) {
+    document.getElementById('heroArtists').innerHTML = '<span style="font-size:var(--text-13);color:var(--l3);font-weight:var(--fw-light)">本日の営業はありません</span>';
+    document.getElementById('heroMeta').style.display = 'none';
+    document.getElementById('heroLink').style.display = 'none';
+    return;
+  }
+  var d = parseDate(ev.date);
+  var dowClass = getDowClass(d);
+  if (ev.flyer_url) { document.getElementById('heroBgImg').src = ev.flyer_url; }
+  document.getElementById('heroDate').textContent = (d.getMonth()+1) + '.' + d.getDate() + '  ' + DAYS_EN[d.getDay()];
+  document.getElementById('heroTitle').textContent = ev.title || '';
+  var artists = (ev.artists || '').split('//').map(function(a){ return sanitize(a.trim()); });
+  document.getElementById('heroArtists').innerHTML = artists.join('<br>');
+  var meta = '';
+  if (ev.open_start) meta += '<div class="hero-meta-item"><div class="hero-meta-label">Open / Start</div><div class="hero-meta-val">'+sanitize(ev.open_start)+'</div></div>';
+  if (ev.ticket_price) meta += '<div class="hero-meta-item"><div class="hero-meta-label">Adv / Door</div><div class="hero-meta-val">'+sanitize(ev.ticket_price)+'</div></div>';
+  document.getElementById('heroMeta').innerHTML = meta;
+  document.getElementById('heroLink').href = 'event.html?id=' + sanitize(ev.id || '');
+}
+
+function renderPickup(events) {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var pickups = events.filter(function(e) {
+    var d = parseDate(e.date); if (!d) return false;
+    d.setHours(0,0,0,0);
+    return e.pickup && d >= today;
+  });
+  var container = document.getElementById('pickupList');
+  if (!pickups.length) { container.closest('section').style.display='none'; return; }
+  var html = '';
+  pickups.forEach(function(e) {
+    var d = parseDate(e.date);
+    var dowClass = getDowClass(d);
+    var dateStr = (d.getMonth()+1)+'.'+('0'+d.getDate()).slice(-2)+' <span class="'+dowClass+'">'+DAYS_EN[d.getDay()]+'</span>';
+    var artists = (e.artists||'').split('//').map(function(a){ return sanitize(a.trim()); }).join(' / ');
+    var img = e.flyer_url
+      ? '<img src="'+sanitize(e.flyer_url)+'" alt="'+sanitize(e.title)+'" loading="lazy">'
+      : '<div class="pickup-flyer-ph">PHOTO</div>';
+    html += '<a class="pickup-card" href="event.html?id='+sanitize(e.id||'')+'" role="listitem">'+
+      '<div class="pickup-flyer">'+img+'</div>'+
+      '<div class="pickup-info">'+
+        '<div class="pickup-date">'+dateStr+'</div>'+
+        '<div class="pickup-artists">'+artists+'</div>'+
+        (e.title ? '<div class="pickup-sub">'+sanitize(e.title)+'</div>' : '')+
+      '</div></a>';
+  });
+  container.innerHTML = html;
+}
+
+function renderSchedule() {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var future = ALL_EVENTS.filter(function(e) {
+    var d = parseDate(e.date); if (!d) return false;
+    d.setHours(0,0,0,0); return d >= today;
+  });
+  var shown = future.slice(0, SHOW_COUNT);
+  var html = '';
+  shown.forEach(function(e) {
+    var d = parseDate(e.date);
+    var dowClass = getDowClass(d);
+    var artists = (e.artists||'').split('//').map(function(a){ return sanitize(a.trim()); }).join(' / ');
+    var thumb = e.flyer_url
+      ? '<div class="ev-thumb"><img src="'+sanitize(e.flyer_url)+'" alt="" loading="lazy"></div>'
+      : '<div class="ev-thumb-ph">NO<br>IMG</div>';
+    html += '<a class="ev-row" href="event.html?id='+sanitize(e.id||'')+'" role="listitem">'+
+      thumb+
+      '<div class="ev-body">'+
+        '<div class="ev-date">'+
+          '<div class="ev-num">'+('0'+d.getDate()).slice(-2)+'</div>'+
+          '<div class="ev-dow '+dowClass+'">'+DAYS_EN[d.getDay()]+'</div>'+
+          '<div class="ev-mon">'+MONTHS_EN[d.getMonth()]+'</div>'+
+        '</div>'+
+        '<div class="ev-title">'+sanitize(e.title)+'</div>'+
+        (artists ? '<div class="ev-cast">'+artists+'</div>' : '')+
+        '<div class="ev-foot">'+
+          (e.open_start ? '<span>'+sanitize(e.open_start)+'</span>' : '')+
+          '<span class="tag">LIVE</span>'+
+        '</div>'+
+      '</div></a>';
+  });
+  document.getElementById('scheduleList').innerHTML = html;
+  var btn = document.getElementById('moreBtn');
+  if (future.length > SHOW_COUNT) {
+    btn.style.display = 'block';
+    btn.textContent = 'もっと見る (' + (future.length - SHOW_COUNT) + ')';
+  } else {
+    btn.style.display = 'none';
+  }
+}
+
+function showMore() { SHOW_COUNT += 5; renderSchedule(); }
+
+fetch(EVENTS_URL)
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    ALL_EVENTS = data;
+    renderToday(data);
+    renderPickup(data);
+    renderSchedule();
+  })
+  .catch(function(){
+    document.getElementById('heroArtists').innerHTML = '<span style="font-size:var(--text-11);color:var(--l4)">読み込み中...</span>';
+  });
+</script>
 </body>
 </html>
