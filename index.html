@@ -40,11 +40,11 @@
 }
 /* タイトル：l2・15px・lh-heading */
 .today-title {
-  font-size: var(--text-15);
-  font-weight: var(--fw-light);
+  font-size: var(--text-13);
+  font-weight: var(--fw-regular);
   color: var(--l2);
   line-height: var(--lh-heading);
-  margin-bottom: var(--sp-12);
+  margin-bottom: var(--sp-8);
 }
 /* Open/Start + Door：一行 */
 .today-meta {
@@ -57,7 +57,7 @@
 }
 .today-meta-label {
   font-size: var(--text-11);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-regular);
   color: var(--l3);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -160,13 +160,13 @@
 .ev-dow.sat { color: var(--sat); }
 .ev-dow.sun { color: var(--sun); }
 /* 月：l3 */
-.ev-mon { font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l3); }
+.ev-mon { font-size: var(--text-11); font-weight: var(--fw-regular); color: var(--l3); }
 /* アーティスト名：l1・17px・lh-list・1人1行 */
 .ev-cast { font-size: var(--text-15); font-weight: var(--fw-medium); color: var(--l1); line-height: var(--lh-list); }
 /* タイトル：l3・13px・lh-heading */
 .ev-title { font-size: var(--text-13); font-weight: var(--fw-regular); color: var(--l3); line-height: var(--lh-heading); }
 /* 時間：l3・11px */
-.ev-time { font-size: var(--text-11); font-weight: var(--fw-light); color: var(--l3); margin-top: 2px; }
+.ev-time { font-size: var(--text-11); font-weight: var(--fw-regular); color: var(--l3); margin-top: 2px; }
 
 .list-foot { padding: var(--sp-16) var(--page-pad) var(--sec-gap); }
 .more-btn {
@@ -188,7 +188,7 @@
 }
 .news-item:first-child { border-top: 0.5px solid var(--border); }
 /* 日付：l3・13px */
-.news-date { font-size: var(--text-13); font-weight: var(--fw-light); color: var(--l3); min-width: 48px; flex-shrink: 0; }
+.news-date { font-size: var(--text-13); font-weight: var(--fw-regular); color: var(--l3); min-width: 48px; flex-shrink: 0; }
 /* カテゴリ：accent・9px */
 .news-cat { font-size: var(--text-9); color: var(--accent); letter-spacing: 0.1em; margin-bottom: 3px; text-transform: uppercase; font-weight: var(--fw-medium); }
 /* タイトル：l1・15px・lh-heading */
@@ -342,11 +342,17 @@ function sanitize(str) {
     .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* アーティスト名を1人1行のHTMLに変換（// または / 区切り） */
+/* アーティスト名を1人1行のHTMLに変換 */
 function artistsToLines(str) {
   if (!str) return '';
-  var sep = str.indexOf('//') !== -1 ? '//' : '/';
-  return str.split(sep).map(function(a) {
+  /* //区切りと「  /  」区切りの両方に対応 */
+  var parts;
+  if (str.indexOf('//') !== -1) {
+    parts = str.split('//');
+  } else {
+    parts = str.split(/\s*\/\s*/);
+  }
+  return parts.map(function(a) {
     return sanitize(a.trim());
   }).filter(function(a) { return a; }).join('<br>');
 }
@@ -387,8 +393,7 @@ function renderToday(events) {
   }
   if (ticketPrice) {
     if (openStart) meta += '<span class="today-meta-sep">·</span>';
-    meta += '<span class="today-meta-label">Door</span>'
-          + '<span class="today-meta-val">' + sanitize(ticketPrice) + '</span>';
+    meta += '<span class="today-meta-val">' + sanitize(ticketPrice) + '</span>';
   }
   if (meta) {
     var el = document.getElementById('todayMeta');
@@ -421,7 +426,7 @@ function renderPickup(events) {
     var dowClass = getDowClass(d);
     var dateStr = (d.getMonth()+1) + '.' + ('0'+d.getDate()).slice(-2)
       + ' <span class="' + dowClass + '">' + DAYS_EN[d.getDay()] + '</span>';
-    var flyerUrl = e.flyer_url || (e.images && e.images[0]) || '';
+    var flyerUrl = (e.images && e.images[0]) || e.flyer_url || '';
     var img = flyerUrl
       ? '<img src="' + sanitize(flyerUrl) + '" alt="' + sanitize(e.title) + '" loading="lazy">'
       : '<div class="pickup-flyer-ph">—</div>';
@@ -456,7 +461,7 @@ function renderSchedule() {
   shown.forEach(function(e) {
     var d = parseDate(e.date);
     var dowClass = getDowClass(d);
-    var thumbUrl = e.flyer_url || (e.images && e.images[0]) || '';
+    var thumbUrl = (e.images && e.images[0]) || e.flyer_url || '';
     var thumb = thumbUrl
       ? '<div class="ev-thumb"><img src="' + sanitize(thumbUrl) + '" alt="" loading="lazy"></div>'
       : '<div class="ev-thumb-ph">—</div>';
