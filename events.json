@@ -62,7 +62,10 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [],
+    "images": [
+      "https://drive.google.com/thumbnail?id=1tslSwMSk2YmCqmZWs-wF0x_DLHFxtw32&sz=w400",
+      "https://drive.google.com/thumbnail?id=1NG_Dzb-3qUrzUpoILLvEOr_ByiwlMmMB&sz=w400"
+    ],
     "url": "#"
   },
   {
