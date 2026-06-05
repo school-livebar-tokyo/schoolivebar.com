@@ -35,7 +35,7 @@
     "price": "無料　入場時 2drink¥1,000-",
     "type": "LIVE",
     "snsPosted": true,
-    "pickup": false,
+    "pickup": true,
     "images": [
       "https://drive.google.com/thumbnail?id=1tEweEx57PaBhsz8cL7wv8wG1WhE-etdy&sz=w400"
     ],
