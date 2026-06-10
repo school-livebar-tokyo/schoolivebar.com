@@ -76,9 +76,7 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": true,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1uDuzpDe-sPB1MmbQ7PTHuC1HMLKxHhL7&sz=w400"
-    ],
+    "images": [],
     "url": "#"
   }
 ]
