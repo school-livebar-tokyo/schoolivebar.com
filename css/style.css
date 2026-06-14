@@ -17,8 +17,10 @@
   --text-13: 13px;
   --text-15: 15px;
   --text-17: 17px;
+  --text-18: 18px;
   --text-20: 20px;
   --text-24: 24px;
+  --text-28: 28px;
   --text-42: 42px;
 
   /* 行間ルール */
@@ -32,7 +34,7 @@
   /* カラールール */
   --l1: #ffffff;                     /* アーティスト名 */
   --l2: rgba(255,255,255,0.62);      /* タイトル・時間・曜日 */
-  --l3: rgba(255,255,255,0.35);      /* 日付・ラベル・セクションヘッダー */
+  --l3: rgba(255,255,255,0.45);      /* 日付・ラベル・セクションヘッダー */
   --l4: rgba(255,255,255,0.18);      /* 装飾・ボーダー周辺 */
 
   --border:     rgba(255,255,255,0.08);
@@ -90,7 +92,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 0.5px solid var(--border);
 }
-.nav-logo img { height: 64px; mix-blend-mode: screen; }
+.nav-logo img { height: 72px; mix-blend-mode: screen; }
 .nav-hamburger {
   display: flex; flex-direction: column; gap: 5px;
   padding: 4px; cursor: pointer;
@@ -103,7 +105,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .sh {
   display: flex; align-items: center; gap: 10px;
   padding: var(--sec-gap) var(--page-pad) var(--sp-16);
-  font-size: var(--text-13);
+  font-size: var(--text-18);
   font-weight: var(--fw-semi);
   color: rgba(255,255,255,0.75);
   letter-spacing: 0.18em;
@@ -144,7 +146,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 .menu-overlay a:hover { color: var(--l1); }
 .menu-close {
   position: absolute; top: 20px; right: 20px;
-  font-size: var(--text-24); color: rgba(255,255,255,0.75);
+  font-size: var(--text-24); color: var(--l3);
   cursor: pointer; padding: 8px;
   background: none; border: none;
   font-family: var(--font);
@@ -157,7 +159,7 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
   padding: var(--sec-gap) var(--page-pad) var(--sp-48);
   border-top: 0.5px solid var(--border);
 }
-.footer-logo img { height: 64px; mix-blend-mode: screen; margin-bottom: var(--sp-16); }
+.footer-logo img { height: 72px; mix-blend-mode: screen; margin-bottom: var(--sp-16); }
 .footer-addr {
   font-size: var(--text-13); font-weight: var(--fw-light);
   color: var(--l3); line-height: var(--lh-body);
