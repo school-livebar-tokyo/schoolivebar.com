@@ -1,35 +1,5 @@
 [
   {
-    "date": "2026-06-13",
-    "title": "コピバン祭り vol.155",
-    "artists": "USG好事家(UNISON SQUARE GARDEN) / DISTURB (D'ERLANGER) / PELTVANCH（オムニバス） / バンド名未定(LiSA) / Ayami",
-    "time": "11:45 / 12:00",
-    "price": "ADV ¥2,000- / DOOR ¥2,500-",
-    "type": "LIVE",
-    "snsPosted": true,
-    "pickup": false,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1NG_Dzb-3qUrzUpoILLvEOr_ByiwlMmMB&sz=w400",
-      "https://drive.google.com/thumbnail?id=1tslSwMSk2YmCqmZWs-wF0x_DLHFxtw32&sz=w400"
-    ],
-    "url": "#"
-  },
-  {
-    "date": "2026-06-13",
-    "title": "No Beer No Life Vol.271 「ヨルイベント」",
-    "artists": "MARTIAN（ヨルシカ） / ナウシカ（ヨルシカ） / セッションライブ",
-    "time": "15:10 / 15:40",
-    "price": "¥2,000- / ¥2,500-",
-    "type": "LIVE",
-    "snsPosted": true,
-    "pickup": false,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1NG_Dzb-3qUrzUpoILLvEOr_ByiwlMmMB&sz=w400",
-      "https://drive.google.com/thumbnail?id=1tslSwMSk2YmCqmZWs-wF0x_DLHFxtw32&sz=w400"
-    ],
-    "url": "#"
-  },
-  {
     "date": "2026-06-14",
     "title": "村上",
     "artists": "",
