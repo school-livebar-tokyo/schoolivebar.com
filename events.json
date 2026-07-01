@@ -8,7 +8,9 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [],
+    "images": [
+      "https://drive.google.com/thumbnail?id=1IU5sNhBpvRNFtz95uyPthEpezS6NeafQ&sz=w400"
+    ],
     "url": "#"
   },
   {
@@ -34,7 +36,9 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": true,
-    "images": [],
+    "images": [
+      "https://drive.google.com/thumbnail?id=1crUoskKS07pSCuYnoZz_zNncpns87A8b&sz=w400"
+    ],
     "url": "#"
   }
 ]
