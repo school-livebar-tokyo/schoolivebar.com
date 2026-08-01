@@ -8,7 +8,9 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [],
+    "images": [
+      "https://drive.google.com/thumbnail?id=1vxapu74mJWe4aWNPAFV1fxICS0nv5QZ0&sz=w400"
+    ],
     "url": "#"
   },
   {
