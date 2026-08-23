@@ -8,9 +8,7 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1lhmWBoMAJrHgHRRGqiys7Ybl6i9Jg2la&sz=w400"
-    ],
+    "images": [],
     "url": "#"
   },
   {
@@ -30,13 +28,15 @@
   {
     "date": "2026-08-27",
     "title": "弾きたがりJAPAN TOUR 2026",
-    "artists": "マスターオブ弾きたがり(GOOFY'S HOLIDAY)/クローン(NUDGE'EM ALLサルーン+NOT REBOUND黒崎)/TAKE(SHACHI)/超大/秋山カラスウリ etc",
-    "time": "18:00/19:00",
+    "artists": "マスターオブ弾きたがり(GOOFY'S HOLIDAY) / クローン(NUDGE'EM ALLサルーン+NOT REBOUND黒崎) / TAKE(SHACHI) / 超大 / 秋山カラスウリ / 山作戰 / MCヘギーfeat.SOBA-YOU / 南波虎哲(Astla) / 50嵐。 / 滝沢ジョー / タナカカイタ(worst taste) /",
+    "time": "18:30/19:00",
     "price": "¥1,000/¥1,000",
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [],
+    "images": [
+      "https://drive.google.com/thumbnail?id=1OHHeiYAyEs1WUSqdJoMr4hp2xtGDXP9d&sz=w400"
+    ],
     "url": "#"
   },
   {
