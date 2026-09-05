@@ -50,7 +50,9 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [],
+    "images": [
+      "https://drive.google.com/thumbnail?id=1dtNmvGUaA2rmiNVb0WI2yOtpmVLqRsOJ&sz=w400"
+    ],
     "url": "#"
   }
 ]
