@@ -8,9 +8,7 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1GqDWhQLqQzVcaxmQZqgHBC-NBJisyOjo&sz=w400"
-    ],
+    "images": [],
     "url": "#"
   },
   {
@@ -22,9 +20,7 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": true,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1aluOPDYkLa9HXYfL35KaCR8lAPTeix01&sz=w400"
-    ],
+    "images": [],
     "url": "#"
   },
   {
@@ -36,9 +32,7 @@
     "type": "LIVE",
     "snsPosted": true,
     "pickup": false,
-    "images": [
-      "https://drive.google.com/thumbnail?id=1dtNmvGUaA2rmiNVb0WI2yOtpmVLqRsOJ&sz=w400"
-    ],
+    "images": [],
     "url": "#"
   }
 ]
